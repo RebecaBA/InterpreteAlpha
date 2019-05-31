@@ -10,7 +10,7 @@ in
         n := x;
         res := 1;
         new := false;
-        while x do
+        while x > 9 do
         begin
             print(res);
             cadena:= "hola";

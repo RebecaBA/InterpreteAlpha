@@ -1,6 +1,7 @@
 import generated.Parser2;
 import generated.Parser2BaseVisitor;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.IllegalFormatException;
 
@@ -8,9 +9,17 @@ import java.util.IllegalFormatException;
 public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     private TablaSimbolos miTabla;
+    boolean vengoWhile = false;
+    boolean vengoIf = false;
+
 
     public MiVisitor() {
         this.miTabla = new TablaSimbolos(); //Instacnia de la Tabla de Métodos
+    }
+
+    @Override
+    public Object visit(ParseTree tree) {
+        return super.visit(tree);
     }
 
     @Override
@@ -38,15 +47,15 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
             Object valor = visit(ctx.expression());
 
-            System.out.println("Before insertions " + valor);
+            //System.out.println("Before insertions " + valor);
             if (valor instanceof Integer && exists.type == 1) {
-                System.out.println("Insertado un integer");
+                //System.out.println("Insertado un integer");
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof String && exists.type == 2) {
-                System.out.println("Insertado un string");
+               // System.out.println("Insertado un string");
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof Boolean && exists.type == 3) {
-                System.out.println("Insertado un Boolean");
+                //System.out.println("Insertado un Boolean");
                 exists.setValue(visit(ctx.expression()));
             } else {
                 printError("SEMANTIC ERROR: No se puede realizar la asignación verifique ", ctx.ID().getSymbol());
@@ -73,7 +82,9 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitWhileSCAST(Parser2.WhileSCASTContext ctx) {
+        vengoWhile = true;
         Object value = visit(ctx.expression());
+        System.out.println("VALUEEEE WHILEE : " + visit(ctx.expression()));
         if (value instanceof Integer) {
             for (int i = 0; i < (Integer) value; i++){
                 visit(ctx.singleCommand());
@@ -147,59 +158,72 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
-        Object value = visit(ctx.primaryExpression(0));
-        System.out.println("EN EL EXPRESSION "+value);
+
+        Object value1 = visit(ctx.primaryExpression(0));
+        Object value2;
+        String cmp_opr;
 
 
-        if(value instanceof Integer){
-            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                char oper = (Character) visit(ctx.operator(i - 1));
-                Object value2 = visit(ctx.primaryExpression(i));
-                if (value2 instanceof Integer){
-                    value = oper(oper, (Integer) value, (Integer) value2);
-                    return value;
-                }
-                return value;
-            }
+
+        if (ctx.comparison(0) != null){
+            System.out.println("SOY CMP DEL WHILE" + ctx.comparison(0).getText());
         }
 
-       else if (value instanceof Boolean){
-            System.out.println("SOY INSTANCIA DE BOOLEAN");
-            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                visit(ctx.comparison(i - 1));
-                visit(ctx.primaryExpression(i));
-            }
-
-        }else if (value instanceof String){
-            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                String oper = (String) visit(ctx.operator(i - 1));
-                Object value2 = visit(ctx.primaryExpression(i));
-                if (value2 instanceof String){
-                    if(oper =="<"|oper ==">"|oper =="<="|oper ==">="){
-                        System.out.println("SEMANTIC ERROR: No es posible realizar la comparacion con { >,<,>=,<=} intente con ==");
-                        System.exit(0);
+        else {
+            if(value1 instanceof Integer){
+                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                    char oper = (Character) visit(ctx.operator(i - 1));
+                    value2 = visit(ctx.primaryExpression(i));
+                    System.out.println("Entróoooo 1");
+                    if (value2 instanceof Integer){
+                        value1 = oper(oper, (Integer) value1, (Integer) value2);
+                        return value1;
                     }
-                    value = operString(oper, (String) value, (String) value2);
-                    return value;
+                    return value1;
                 }
-                return value;
             }
-        }else{
 
+            else if (value1 instanceof Boolean){
+                //System.out.println("SOY INSTANCIA DE BOOLEAN");
+                System.out.println("Entróoooo 2");
+                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                    visit(ctx.comparison(i - 1));
+                    visit(ctx.primaryExpression(i));
+                }
+            }
+
+
+            else if (value1 instanceof String){
+                System.out.println("Entróoooo 3");
+                //System.out.println("SIZE: " + ctx.primaryExpression().size());
+                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                    String oper = (String) visit(ctx.operator(i - 1));
+                    value2 = visit(ctx.primaryExpression(i));
+                    if (value2 instanceof String){
+                        if(oper =="<"|oper ==">"|oper =="<="|oper ==">="){
+                            System.out.println("SEMANTIC ERROR: No es posible realizar la comparacion con { >,<,>=,<=} intente con ==");
+                            System.exit(0);
+                        }
+                        value1 = operString(oper, (String) value1, (String) value2);
+                        return value1;
+                    }
+                    return value1;
+                }
+            }
+            return value1;
         }
-        return value;
-
+        return value1;
     }
 
     @Override
     public Object visitNumPEAST(Parser2.NumPEASTContext ctx) {
-        System.out.println("EN UN NUMPEAST");
+        //System.out.println("EN UN NUMPEAST");
         return Integer.parseInt(ctx.NUM().getText());
     }
 
     @Override
     public Object visitIdPEAST(Parser2.IdPEASTContext ctx) {
-        System.out.println("EN UN IDPEAST");
+        //System.out.println("EN UN IDPEAST");
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null){
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
@@ -212,21 +236,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitStringPEAST(Parser2.StringPEASTContext ctx) {
-        System.out.println("EN UN STRINGPEAST");
-        System.out.println("STRIIIING"+ctx.STRING().getText());
+        //System.out.println("EN UN STRINGPEAST");
+        //System.out.println("STRIIIING"+ctx.STRING().getText());
         return ctx.STRING().getText();
     }
 
     @Override
     public Object visitGroupPEAST(Parser2.GroupPEASTContext ctx) {
-        System.out.println("EN UN GROUP_PEAST");
+        //System.out.println("EN UN GROUP_PEAST");
         return visit(ctx.expression());
     }
 
 
     @Override
     public Object visitPrintSCAST(Parser2.PrintSCASTContext ctx) {
-        System.out.println("EN UN PRINTSCAST");
+        //System.out.println("EN UN PRINTSCAST");
         return visit(ctx.PRINT());
     }
 
@@ -262,17 +286,23 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     }
     private Boolean logicCompare (String op, Integer o1, Integer o2){
         switch(op) {
-            case ">":  if(o1>o2)    return true; else return false;
-            case ">=": if(o1>=o2)   return true; else return false;
-            case "<=": if(o1<=o2)   return true; else return false;
-            case "<":  if(o1<02)    return true; else return false;
-            case "==": if(o1 == 02) return true; else return false;
+            case ">":
+                return o1 > o2;
+            case ">=":
+                return o1 >= o2;
+            case "<=":
+                return o1 <= o2;
+            case "<":
+                return o1 < o2;
+            case "==":
+                return o1.equals(o2);
         }
         return false;
     }
+
     private String operString(String op, String o1, String o2){
-        switch(op) {
-            case "+": return o1 + o2;
+        if ("+".equals(op)) {
+            return o1 + o2;
         }
         return "";
     }

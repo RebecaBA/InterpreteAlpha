@@ -37,6 +37,8 @@ public class Main {
 
             try {
                 tree = parser.program();
+                java.util.concurrent.Future<JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree, parser);
+                treeGUI.get().setVisible(true);
                 MiVisitor mv = new MiVisitor();
                 mv.visit(tree);
             }
@@ -47,8 +49,7 @@ public class Main {
 
             if (errorListener.hasErrors() == false) {
                 System.out.println("Compilación Exitosa!!\n");
-                java.util.concurrent.Future<JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree, parser);
-                treeGUI.get().setVisible(true);
+
             }
             else {
                 System.out.println("Compilación Fallida!!\n");

@@ -28,3 +28,4 @@ operator : SUM | SUB | MUL | DIV                                            #ope
 comparison: MAYOR|MENOR|IGUAL|MAYORIGUAL|MENORIGUAL                         #comparisonAST;
 
 
+//(primaryExpression ((operator|comparison) primaryExpression)*) (AND|OR primaryExpression ((operator|comparison) primaryExpression)*)*

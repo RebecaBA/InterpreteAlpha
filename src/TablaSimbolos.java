@@ -77,7 +77,7 @@ public class TablaSimbolos {
                 tipoVariable = "boolean";
             }
 
-            System.out.println("Nombre: " + s.getText() + " - NIVEL: " + ((Ident) tabla.get(i)).nivel +" - TIPO :"+tipoVariable+ " - VALOR: " + ((Ident) tabla.get(i)).valor);
+            System.out.println("Nombre: " + s.getText() + ", Nivel: " + ((Ident) tabla.get(i)).nivel +", Tipo: "+tipoVariable+ ", Valor: " + ((Ident) tabla.get(i)).valor);
 
         }
         System.out.println("----- FIN TABLA ------");

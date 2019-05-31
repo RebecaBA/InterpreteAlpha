@@ -2,38 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369d1e4-3217-4135-a404-1faea26c92fc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Parser2.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scanner.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/META-INF/Alpha.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/MiVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/MiVisitorInterprete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/MiVisitorInterprete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/MyErrorListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/MyErrorListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/ParserManual.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/ParserManual.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/TablaSimbolos$Ident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/TablaSimbolos$Ident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/TablaSimbolos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/TablaSimbolos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$AssignSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$AssignSCASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$BeginSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$BeginSCASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$BooleanPEASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$BooleanPEASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CallSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CallSCASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CommandASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CommandASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CommandContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$CommandContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ComparisonContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ComparisonContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ConstDeclASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ConstDeclASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$DeclarationASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$DeclarationASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$DeclarationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$DeclarationContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ExpressionASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ExpressionASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ExpressionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$GroupPEASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$GroupPEASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$IdPEASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$IdPEASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$IfSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$IfSCASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$LetSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$LetSCASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$NumPEASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$NumPEASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$OperatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$OperatorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$PrimaryExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$PrimaryExpressionContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$PrintSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$PrintSCASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ProgramASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ProgramASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$ProgramContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$SingleCommandContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$SingleCommandContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$SingleDeclarationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$SingleDeclarationContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$StringPEASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$StringPEASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$TypedenoterASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$TypedenoterASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$TypedenoterContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$TypedenoterContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$VarDeclASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$VarDeclASTContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$WhileSCASTContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2$WhileSCASTContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2BaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2BaseVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Parser2Visitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/generated/Scanner.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Parser2.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Parser2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Parser2.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Parser2BaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Parser2BaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Parser2Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Parser2Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Scanner.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Scanner.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TablaSimbolos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TablaSimbolos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Parser2.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Parser2BaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Parser2Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/Scanner.tokens" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test2.txt" afterDir="false" />
     </list>
     <ignored path="Alpha.iws" />
@@ -48,41 +73,9 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/Parser2.g4">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="560">
-                    <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/Scanner.g4">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="700">
-                    <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Alpha" />
@@ -90,31 +83,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scanner.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ParserManual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TablaSimbolos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -122,26 +103,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="237" column="56" selection-start-line="237" selection-start-column="56" selection-end-line="237" selection-end-column="56" />
+            <state relative-caret-position="-373">
+              <caret line="168" column="82" lean-forward="true" selection-start-line="168" selection-start-column="82" selection-end-line="168" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
                 <element signature="e#4618#4619#0" expanded="true" />
                 <element signature="e#4654#4655#0" expanded="true" />
-                <element signature="e#7922#7923#0" expanded="true" />
-                <element signature="e#7968#7969#0" expanded="true" />
-                <element signature="e#8046#8047#0" expanded="true" />
-                <element signature="e#8092#8093#0" expanded="true" />
+                <element signature="e#8891#8892#0" expanded="true" />
+                <element signature="e#9015#9016#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/generated/Parser2.java">
+        <entry file="file://$PROJECT_DIR$/Parser2.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4760">
-              <caret line="245" selection-start-line="245" selection-end-line="245" />
+            <state relative-caret-position="314">
+              <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -149,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="82">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,7 +163,6 @@
       <find>primaryEXpr</find>
       <find>stringPea</find>
       <find>assi</find>
-      <find>expression</find>
       <find>before</find>
       <find>Error!!!</find>
       <find>insertar</find>
@@ -190,6 +170,14 @@
       <find>assign</find>
       <find>insertad</find>
       <find>undef</find>
+      <find>booleanp</find>
+      <find>expres</find>
+      <find>en e</find>
+      <find>primary</find>
+      <find>primaryExpress</find>
+      <find>Express</find>
+      <find>operator</find>
+      <find>expression</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,29 +190,49 @@
         <option value="$PROJECT_DIR$/src/generated/Parser.java" />
         <option value="$PROJECT_DIR$/src/generated/Parser2.java" />
         <option value="$PROJECT_DIR$/test.txt" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MyErrorListener.java" />
         <option value="$PROJECT_DIR$/src/MiVisitorInterprete.java" />
         <option value="$PROJECT_DIR$/src/ParserManual.java" />
-        <option value="$PROJECT_DIR$/src/TablaSimbolos.java" />
-        <option value="$PROJECT_DIR$/test2.txt" />
         <option value="$PROJECT_DIR$/Scanner.g4" />
         <option value="$PROJECT_DIR$/Parser2.g4" />
+        <option value="$PROJECT_DIR$/src/TablaSimbolos.java" />
+        <option value="$PROJECT_DIR$/test2.txt" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MiVisitor.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="InterpreteAlpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InterpreteAlpha" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InterpreteAlpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InterpreteAlpha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="$PROJECT_DIR$/Parser.g4::/auto-gen" value="true" />
@@ -234,17 +242,18 @@
     <property name="$PROJECT_DIR$/Parser.g4::/output-dir" value="C:\Users\oviquez\Documents\00.Cursos\Compiladores (IC-5701)\2018\I Semestre\Pruebas\Alpha\src" />
     <property name="$PROJECT_DIR$/Parser.g4::/package" value="generated" />
     <property name="$PROJECT_DIR$/Parser2.g4::/auto-gen" value="true" />
-    <property name="$PROJECT_DIR$/Parser2.g4::/gen-listener" value="false" />
+    <property name="$PROJECT_DIR$/Parser2.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/Parser2.g4::/gen-visitor" value="true" />
     <property name="$PROJECT_DIR$/Parser2.g4::/language" value="Java" />
-    <property name="$PROJECT_DIR$/Parser2.g4::/output-dir" value="C:\Users\jaffe\Downloads\Examen\Alpha_Jaffette\src" />
+    <property name="$PROJECT_DIR$/Parser2.g4::/output-dir" value="C:\Users\RebecaBA\Documents\InterpreteAlpha\src" />
     <property name="$PROJECT_DIR$/Parser2.g4::/package" value="generated" />
     <property name="$PROJECT_DIR$/Scanner.g4::/auto-gen" value="true" />
-    <property name="$PROJECT_DIR$/Scanner.g4::/gen-listener" value="false" />
+    <property name="$PROJECT_DIR$/Scanner.g4::/gen-listener" value="true" />
     <property name="$PROJECT_DIR$/Scanner.g4::/gen-visitor" value="true" />
     <property name="$PROJECT_DIR$/Scanner.g4::/language" value="Java" />
-    <property name="$PROJECT_DIR$/Scanner.g4::/output-dir" value="C:\Users\jaffe\Downloads\Examen\Alpha_Jaffette\src" />
+    <property name="$PROJECT_DIR$/Scanner.g4::/output-dir" value="C:\Users\RebecaBA\Documents\InterpreteAlpha\src" />
     <property name="$PROJECT_DIR$/Scanner.g4::/package" value="generated" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559269925960" />
@@ -384,6 +393,7 @@
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -430,10 +440,10 @@
     <option name="totallyTimeSpent" value="33008000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17114094" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118003026" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -442,15 +452,15 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32976827" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3186969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977092" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26350245" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.49932885" weight="0.32719547" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.32719547" />
+      <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.49932885" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.61898017" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.61865795" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -467,7 +477,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1709531" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -476,15 +486,15 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32976827" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6572238" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2782324" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.49932885" weight="0.32719547" />
+      <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.49932885" weight="0.32569557" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.61898017" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -515,6 +525,20 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>visit(ctx.operator(0))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ctx.operator(i - 1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/generated/Scanner.java">
@@ -585,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/Parser2BaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -622,34 +639,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TablaSimbolos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/Parser2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4760">
+        <state relative-caret-position="3570">
           <caret line="245" selection-start-line="245" selection-end-line="245" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ParserManual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+        <state relative-caret-position="357">
+          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TablaSimbolos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser2.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="82">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -658,37 +685,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scanner.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser2.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MiVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="237" column="56" selection-start-line="237" selection-start-column="56" selection-end-line="237" selection-end-column="56" />
+        <state relative-caret-position="-373">
+          <caret line="168" column="82" lean-forward="true" selection-start-line="168" selection-start-column="82" selection-end-line="168" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
             <element signature="e#4618#4619#0" expanded="true" />
             <element signature="e#4654#4655#0" expanded="true" />
-            <element signature="e#7922#7923#0" expanded="true" />
-            <element signature="e#7968#7969#0" expanded="true" />
-            <element signature="e#8046#8047#0" expanded="true" />
-            <element signature="e#8092#8093#0" expanded="true" />
+            <element signature="e#8891#8892#0" expanded="true" />
+            <element signature="e#9015#9016#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,4 +1,4 @@
-// Generated from C:/Users/jaffe/Downloads/Examen/Alpha_Jaffette\Parser2.g4 by ANTLR 4.7.2
+// Generated from C:/Users/RebecaBA/Documents/InterpreteAlpha\Parser2.g4 by ANTLR 4.7.2
 package generated;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 

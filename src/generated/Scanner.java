@@ -1,4 +1,4 @@
-// Generated from C:/Users/jaffe/Downloads/Examen/Alpha_Jaffette\Scanner.g4 by ANTLR 4.7.2
+// Generated from C:/Users/RebecaBA/Documents/InterpreteAlpha\Scanner.g4 by ANTLR 4.7.2
 package generated;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
