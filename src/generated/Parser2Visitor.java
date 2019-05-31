@@ -149,10 +149,4 @@ public interface Parser2Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOperator(Parser2.OperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Parser2#comparison}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitComparison(Parser2.ComparisonContext ctx);
 }
