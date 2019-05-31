@@ -1,21 +1,38 @@
 let
-    var x : int;
-    var a : char
+    var y : int;
+    var l : string;
+    var g : string;
+    var m : boolean
 in
     begin
-    x := 3;
-    let
-        var var1:t;
-        var a : int;
-        var b : int
-    in
-        if ( var1 ) then
+        let
+            var y : int;
+            var w : string
+        in
             begin
-                a := a + 1;
-                b := "hola"
-            end
-            else
-                x := 3 * 2
+
+                let
+                    var y : int;
+                    var w : string
+                in
+                    begin
+                        y :=10;
+                        m := true
+                    end;
+                while y do
+                     begin
+                        print("hi")
+                     end
+             end;
+         l := "GG";
+         if(y) then
+            y:= y+2
+         else
+            y:= y+1;
+            g :="Robert";
+            y:=y+3;
+         print(y)
+
 
     end
 

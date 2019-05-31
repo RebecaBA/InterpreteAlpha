@@ -34,19 +34,20 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null) {
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
+            System.exit(0);
         }else {
 
             Object valor = visit(ctx.expression());
 
-            System.out.println("Before insertions " + valor);
+
             if (valor instanceof Integer && exists.type == 1) {
-                System.out.println("Insertado un integer");
+
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof String && exists.type == 2) {
-                System.out.println("Insertado un string");
+
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof Boolean && exists.type == 3) {
-                System.out.println("Insertado un Boolean");
+
                 exists.setValue(visit(ctx.expression()));
             } else {
                 printError("SEMANTIC ERROR: No se puede realizar la asignación verifique ", ctx.ID().getSymbol());
@@ -120,23 +121,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     public Object visitVarDeclAST(Parser2.VarDeclASTContext ctx) {
 
         Object value = visit(ctx.typedenoter());
-        if(miTabla.buscar(ctx.ID().getSymbol().getText()) == null) {
+        if(miTabla.buscarPorNivel(ctx.ID().getSymbol().getText()) == null) {
             if (value.equals("string")) {
                 //Si es string el valor de typeDenoter inserto con 2
-
                 miTabla.insertar(ctx.ID().getSymbol(), 2);
             } else if (value.equals("int")) {
                 //Si es int el valor de typeDenoter inserto con 1
                 miTabla.insertar(ctx.ID().getSymbol(), 1);
             } else if (value.equals("boolean")) {
-                //Si es int el valor de typeDenoter inserto con 1
+                //Si es int el valor de typeDenoter inserto con 3
                 miTabla.insertar(ctx.ID().getSymbol(), 3);
-            } else{
-                System.out.println("TIPO NO INDENTIFICADO" );
+            } else {
+                System.out.println("TIPO NO INDENTIFICADO");
             }
         }
 
-        visit(ctx.typedenoter());
         return null;
     }
 
@@ -148,9 +147,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
         Object value = visit(ctx.primaryExpression(0));
-        System.out.println("EN EL EXPRESSION "+value);
-
-
         if(value instanceof Integer){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 char oper = (Character) visit(ctx.operator(i - 1));
@@ -164,7 +160,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         }
 
        else if (value instanceof Boolean){
-            System.out.println("SOY INSTANCIA DE BOOLEAN");
+
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 visit(ctx.comparison(i - 1));
                 visit(ctx.primaryExpression(i));
@@ -193,13 +189,12 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitNumPEAST(Parser2.NumPEASTContext ctx) {
-        System.out.println("EN UN NUMPEAST");
+
         return Integer.parseInt(ctx.NUM().getText());
     }
 
     @Override
     public Object visitIdPEAST(Parser2.IdPEASTContext ctx) {
-        System.out.println("EN UN IDPEAST");
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null){
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
@@ -207,26 +202,24 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         }
         else
             return exists.valor;
-        return null;
+        return  null;
     }
 
     @Override
     public Object visitStringPEAST(Parser2.StringPEASTContext ctx) {
-        System.out.println("EN UN STRINGPEAST");
-        System.out.println("STRIIIING"+ctx.STRING().getText());
         return ctx.STRING().getText();
     }
 
     @Override
     public Object visitGroupPEAST(Parser2.GroupPEASTContext ctx) {
-        System.out.println("EN UN GROUP_PEAST");
         return visit(ctx.expression());
     }
 
 
     @Override
     public Object visitPrintSCAST(Parser2.PrintSCASTContext ctx) {
-        System.out.println("EN UN PRINTSCAST");
+        System.out.println("HAY UN PRINT");
+        visit(ctx.expression());
         return visit(ctx.PRINT());
     }
 
