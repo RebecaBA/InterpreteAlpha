@@ -147,7 +147,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
-        System.out.println("EL LARGO ES "+ctx.primaryExpression().size());
         Object value = visit(ctx.primaryExpression(0));
         System.out.println("EN EL EXPRESSION "+value);
 
@@ -163,7 +162,15 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                 return value;
             }
         }
-        else if (value instanceof String){
+
+       else if (value instanceof Boolean){
+            System.out.println("SOY INSTANCIA DE BOOLEAN");
+            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                visit(ctx.comparison(i - 1));
+                visit(ctx.primaryExpression(i));
+            }
+
+        }else if (value instanceof String){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
@@ -177,14 +184,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                 }
                 return value;
             }
-        }
-       else if (value instanceof Boolean){
-            System.out.println("SOY INSTANCIA DE BOOLEAN");
-            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                visit(ctx.comparison(i - 1));
-                visit(ctx.primaryExpression(i));
-            }
-
         }else{
 
         }
@@ -233,8 +232,13 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitBooleanPEAST(Parser2.BooleanPEASTContext ctx) {
-        System.out.println("EN UN BOLEANDAST");
-        return ctx.BOOLEAN().getText();
+        if(ctx.BOOLEAN().getText().equals("false")){
+            return false;
+        }
+        else if (ctx.BOOLEAN().getText().equals("true")){
+            return true;
+        }
+        return null;
     }
 
     @Override

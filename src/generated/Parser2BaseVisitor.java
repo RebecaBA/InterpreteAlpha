@@ -122,14 +122,14 @@ public class Parser2BaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIdPEAST(Parser2.IdPEASTContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBooleanPEAST(Parser2.BooleanPEASTContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBooleanPEAST(Parser2.BooleanPEASTContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIdPEAST(Parser2.IdPEASTContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

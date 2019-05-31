@@ -19,9 +19,9 @@ singleDeclaration : CONST ID VIR expression                                 #con
     	   | VAR ID DOSPUN typedenoter                                      #varDeclAST;
 typedenoter : ID                                                            #typedenoterAST;
 expression : primaryExpression ((operator|comparison) primaryExpression)*   #expressionAST;
-primaryExpression : NUM                                                     #numPEAST
-                    | ID                                                    #idPEAST
+primaryExpression :   NUM                                                   #numPEAST
                     | BOOLEAN                                               #booleanPEAST
+                    | ID                                                    #idPEAST
                     | (STRING | SPECIAL_STRING)                             #stringPEAST
                     | PIZQ expression PDER                                  #groupPEAST;
 operator : SUM | SUB | MUL | DIV                                            #operatorAST;

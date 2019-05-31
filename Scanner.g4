@@ -31,11 +31,9 @@ CONST   : 'const';
 VAR     : 'var';
 AND     : 'and';
 OR      : 'or';
-TRUE    : 'true';
-FALSE   : 'false';
 PRINT   : 'print';
 
-BOOLEAN               : TRUE | FALSE;
+BOOLEAN               : 'true' | 'false';
 ID                    : LETTER (LETTER|DIGIT)* ;
 NUM                   : DIGIT DIGIT* ;
 STRING                :   '"' ('""'|~'"')* '"' ;
