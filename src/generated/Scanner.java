@@ -20,7 +20,7 @@ public class Scanner extends Lexer {
 		PyCOMA=1, ASSIGN=2, PIZQ=3, PDER=4, VIR=5, DOSPUN=6, SUM=7, SUB=8, MUL=9, 
 		DIV=10, MAYOR=11, MENOR=12, IGUAL=13, MAYORIGUAL=14, MENORIGUAL=15, IF=16, 
 		WHILE=17, LET=18, THEN=19, ELSE=20, IN=21, DO=22, BEGIN=23, END=24, CONST=25, 
-		VAR=26, AND=27, OR=28, PRINT=29, BOOLEAN=30, ID=31, NUM=32, STRING=33, 
+		VAR=26, OR=27, AND=28, PRINT=29, BOOLEAN=30, ID=31, NUM=32, STRING=33, 
 		SPECIAL_STRING=34, WS=35;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
@@ -34,8 +34,8 @@ public class Scanner extends Lexer {
 		return new String[] {
 			"PyCOMA", "ASSIGN", "PIZQ", "PDER", "VIR", "DOSPUN", "SUM", "SUB", "MUL", 
 			"DIV", "MAYOR", "MENOR", "IGUAL", "MAYORIGUAL", "MENORIGUAL", "IF", "WHILE", 
-			"LET", "THEN", "ELSE", "IN", "DO", "BEGIN", "END", "CONST", "VAR", "AND", 
-			"OR", "PRINT", "BOOLEAN", "ID", "NUM", "STRING", "SPECIAL_STRING", "LETTER", 
+			"LET", "THEN", "ELSE", "IN", "DO", "BEGIN", "END", "CONST", "VAR", "OR", 
+			"AND", "PRINT", "BOOLEAN", "ID", "NUM", "STRING", "SPECIAL_STRING", "LETTER", 
 			"DIGIT", "WS"
 		};
 	}
@@ -46,7 +46,7 @@ public class Scanner extends Lexer {
 			null, "';'", "':='", "'('", "')'", "'~'", "':'", "'+'", "'-'", "'*'", 
 			"'/'", "'>'", "'<'", "'=='", "'>='", "'<='", "'if'", "'while'", "'let'", 
 			"'then'", "'else'", "'in'", "'do'", "'begin'", "'end'", "'const'", "'var'", 
-			"'and'", "'or'", "'print'"
+			"'or'", "'and'", "'print'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -55,7 +55,7 @@ public class Scanner extends Lexer {
 			null, "PyCOMA", "ASSIGN", "PIZQ", "PDER", "VIR", "DOSPUN", "SUM", "SUB", 
 			"MUL", "DIV", "MAYOR", "MENOR", "IGUAL", "MAYORIGUAL", "MENORIGUAL", 
 			"IF", "WHILE", "LET", "THEN", "ELSE", "IN", "DO", "BEGIN", "END", "CONST", 
-			"VAR", "AND", "OR", "PRINT", "BOOLEAN", "ID", "NUM", "STRING", "SPECIAL_STRING", 
+			"VAR", "OR", "AND", "PRINT", "BOOLEAN", "ID", "NUM", "STRING", "SPECIAL_STRING", 
 			"WS"
 		};
 	}
@@ -129,7 +129,7 @@ public class Scanner extends Lexer {
 		"\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24\3\25\3"+
 		"\25\3\25\3\25\3\25\3\26\3\26\3\26\3\27\3\27\3\27\3\30\3\30\3\30\3\30\3"+
 		"\30\3\30\3\31\3\31\3\31\3\31\3\32\3\32\3\32\3\32\3\32\3\32\3\33\3\33\3"+
-		"\33\3\33\3\34\3\34\3\34\3\34\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3"+
+		"\33\3\33\3\34\3\34\3\34\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3"+
 		"\36\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\5\37\u00b7\n\37\3 \3"+
 		" \3 \7 \u00bc\n \f \16 \u00bf\13 \3!\3!\7!\u00c3\n!\f!\16!\u00c6\13!\3"+
 		"\"\3\"\3\"\3\"\7\"\u00cc\n\"\f\"\16\"\u00cf\13\"\3\"\3\"\3#\3#\3#\3#\3"+
@@ -148,7 +148,7 @@ public class Scanner extends Lexer {
 		"\2\2\2\27b\3\2\2\2\31d\3\2\2\2\33f\3\2\2\2\35i\3\2\2\2\37l\3\2\2\2!o\3"+
 		"\2\2\2#r\3\2\2\2%x\3\2\2\2\'|\3\2\2\2)\u0081\3\2\2\2+\u0086\3\2\2\2-\u0089"+
 		"\3\2\2\2/\u008c\3\2\2\2\61\u0092\3\2\2\2\63\u0096\3\2\2\2\65\u009c\3\2"+
-		"\2\2\67\u00a0\3\2\2\29\u00a4\3\2\2\2;\u00a7\3\2\2\2=\u00b6\3\2\2\2?\u00b8"+
+		"\2\2\67\u00a0\3\2\2\29\u00a3\3\2\2\2;\u00a7\3\2\2\2=\u00b6\3\2\2\2?\u00b8"+
 		"\3\2\2\2A\u00c0\3\2\2\2C\u00c7\3\2\2\2E\u00d2\3\2\2\2G\u00e1\3\2\2\2I"+
 		"\u00e3\3\2\2\2K\u00e6\3\2\2\2MN\7=\2\2N\4\3\2\2\2OP\7<\2\2PQ\7?\2\2Q\6"+
 		"\3\2\2\2RS\7*\2\2S\b\3\2\2\2TU\7+\2\2U\n\3\2\2\2VW\7\u0080\2\2W\f\3\2"+
@@ -166,8 +166,8 @@ public class Scanner extends Lexer {
 		"\u0095\7f\2\2\u0095\62\3\2\2\2\u0096\u0097\7e\2\2\u0097\u0098\7q\2\2\u0098"+
 		"\u0099\7p\2\2\u0099\u009a\7u\2\2\u009a\u009b\7v\2\2\u009b\64\3\2\2\2\u009c"+
 		"\u009d\7x\2\2\u009d\u009e\7c\2\2\u009e\u009f\7t\2\2\u009f\66\3\2\2\2\u00a0"+
-		"\u00a1\7c\2\2\u00a1\u00a2\7p\2\2\u00a2\u00a3\7f\2\2\u00a38\3\2\2\2\u00a4"+
-		"\u00a5\7q\2\2\u00a5\u00a6\7t\2\2\u00a6:\3\2\2\2\u00a7\u00a8\7r\2\2\u00a8"+
+		"\u00a1\7q\2\2\u00a1\u00a2\7t\2\2\u00a28\3\2\2\2\u00a3\u00a4\7c\2\2\u00a4"+
+		"\u00a5\7p\2\2\u00a5\u00a6\7f\2\2\u00a6:\3\2\2\2\u00a7\u00a8\7r\2\2\u00a8"+
 		"\u00a9\7t\2\2\u00a9\u00aa\7k\2\2\u00aa\u00ab\7p\2\2\u00ab\u00ac\7v\2\2"+
 		"\u00ac<\3\2\2\2\u00ad\u00ae\7v\2\2\u00ae\u00af\7t\2\2\u00af\u00b0\7w\2"+
 		"\2\u00b0\u00b7\7g\2\2\u00b1\u00b2\7h\2\2\u00b2\u00b3\7c\2\2\u00b3\u00b4"+

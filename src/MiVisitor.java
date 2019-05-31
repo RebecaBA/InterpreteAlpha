@@ -168,17 +168,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
+
                 if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")||oper.equals("==")){
+                    System.out.println("VALUEEE 2: " + ctx.primaryExpression(i).getText());
                     if(value2 instanceof Boolean){
                         System.out.println("ERROR: no es posible comparar Integers con Booleans");
                         System.exit(0);
                     }
-                    if(value2 instanceof String){
+                    else if(value2 instanceof String){
                         System.out.println("ERROR: no es posible comparar Integers con Strings");
                         System.exit(0);
                     }
+                    else if (value2 instanceof Integer){
+                        System.exit(0);
+                    }
                 }
-
                 if (value2 instanceof Integer){
                     value = oper(oper, (Integer) value, (Integer) value2);
                     return value;

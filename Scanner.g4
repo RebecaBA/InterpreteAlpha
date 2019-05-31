@@ -29,8 +29,8 @@ BEGIN   : 'begin';
 END     : 'end';
 CONST   : 'const';
 VAR     : 'var';
-AND     : 'and';
 OR      : 'or';
+AND     : 'and';
 PRINT   : 'print';
 
 BOOLEAN               : 'true' | 'false';
