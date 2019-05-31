@@ -703,7 +703,7 @@ public class Parser2 extends Parser {
 			setState(91);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SUM) | (1L << SUB) | (1L << MUL) | (1L << DIV) | (1L << MAYOR) | (1L << MENOR) | (1L << IGUAL) | (1L << MAYORIGUAL) | (1L << MENORIGUAL))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SUM) | (1L << SUB) | (1L << MUL) | (1L << DIV) | (1L << MAYOR) | (1L << MENOR) | (1L << IGUAL) | (1L << MAYORIGUAL) | (1L << MENORIGUAL) | (1L << AND) | (1L << OR))) != 0)) {
 				{
 				{
 				setState(86);
@@ -877,6 +877,8 @@ public class Parser2 extends Parser {
 		public TerminalNode IGUAL() { return getToken(Parser2.IGUAL, 0); }
 		public TerminalNode MAYORIGUAL() { return getToken(Parser2.MAYORIGUAL, 0); }
 		public TerminalNode MENORIGUAL() { return getToken(Parser2.MENORIGUAL, 0); }
+		public TerminalNode AND() { return getToken(Parser2.AND, 0); }
+		public TerminalNode OR() { return getToken(Parser2.OR, 0); }
 		public OperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -897,7 +899,7 @@ public class Parser2 extends Parser {
 			{
 			setState(104);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SUM) | (1L << SUB) | (1L << MUL) | (1L << DIV) | (1L << MAYOR) | (1L << MENOR) | (1L << IGUAL) | (1L << MAYORIGUAL) | (1L << MENORIGUAL))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SUM) | (1L << SUB) | (1L << MUL) | (1L << DIV) | (1L << MAYOR) | (1L << MENOR) | (1L << IGUAL) | (1L << MAYORIGUAL) | (1L << MENORIGUAL) | (1L << AND) | (1L << OR))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -926,12 +928,12 @@ public class Parser2 extends Parser {
 		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4B\n\4\3\5\3\5\3\5\7\5G\n\5\f\5\16"+
 		"\5J\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6T\n\6\3\7\3\7\3\b\3\b\3\b"+
 		"\3\b\7\b\\\n\b\f\b\16\b_\13\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\ti\n\t"+
-		"\3\n\3\n\3\n\2\2\13\2\4\6\b\n\f\16\20\22\2\4\3\2#$\3\2\t\21\2q\2\24\3"+
-		"\2\2\2\4\27\3\2\2\2\6A\3\2\2\2\bC\3\2\2\2\nS\3\2\2\2\fU\3\2\2\2\16W\3"+
-		"\2\2\2\20h\3\2\2\2\22j\3\2\2\2\24\25\5\6\4\2\25\26\7\2\2\3\26\3\3\2\2"+
-		"\2\27\34\5\6\4\2\30\31\7\3\2\2\31\33\5\6\4\2\32\30\3\2\2\2\33\36\3\2\2"+
-		"\2\34\32\3\2\2\2\34\35\3\2\2\2\35\5\3\2\2\2\36\34\3\2\2\2\37 \7!\2\2 "+
-		"!\7\4\2\2!B\5\16\b\2\"#\7!\2\2#$\7\5\2\2$%\5\16\b\2%&\7\6\2\2&B\3\2\2"+
+		"\3\n\3\n\3\n\2\2\13\2\4\6\b\n\f\16\20\22\2\4\3\2#$\4\2\t\21\35\36\2q\2"+
+		"\24\3\2\2\2\4\27\3\2\2\2\6A\3\2\2\2\bC\3\2\2\2\nS\3\2\2\2\fU\3\2\2\2\16"+
+		"W\3\2\2\2\20h\3\2\2\2\22j\3\2\2\2\24\25\5\6\4\2\25\26\7\2\2\3\26\3\3\2"+
+		"\2\2\27\34\5\6\4\2\30\31\7\3\2\2\31\33\5\6\4\2\32\30\3\2\2\2\33\36\3\2"+
+		"\2\2\34\32\3\2\2\2\34\35\3\2\2\2\35\5\3\2\2\2\36\34\3\2\2\2\37 \7!\2\2"+
+		" !\7\4\2\2!B\5\16\b\2\"#\7!\2\2#$\7\5\2\2$%\5\16\b\2%&\7\6\2\2&B\3\2\2"+
 		"\2\'(\7\22\2\2()\5\16\b\2)*\7\25\2\2*+\5\6\4\2+,\7\26\2\2,-\5\6\4\2-B"+
 		"\3\2\2\2./\7\23\2\2/\60\5\16\b\2\60\61\7\30\2\2\61\62\5\6\4\2\62B\3\2"+
 		"\2\2\63\64\7\24\2\2\64\65\5\b\5\2\65\66\7\27\2\2\66\67\5\6\4\2\67B\3\2"+

@@ -70,14 +70,14 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         Object expresion = visit(ctx.expression());
         System.out.println("EN EL IF "+expresion);
         if(expresion instanceof String){
-            System.out.println("No es posible realizar un IF con un string");
+            System.out.println("No es posible comparar Strings con ese operador lógico");
             System.exit(0);
         }
         visit(ctx.singleCommand(0));
         visit(ctx.singleCommand(1));
         return null;
     }
-
+/*****************************HABILITAR DIFERENTES COMPARACIONES**************************************/
     @Override
     public Object visitWhileSCAST(Parser2.WhileSCASTContext ctx) {
         Object value = visit(ctx.expression());
@@ -177,11 +177,47 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         }
         else if (value instanceof String){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                char oper = (Character) visit(ctx.operator(i - 1));
+                String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
+                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")) {
+                    if (value2 instanceof Boolean) {
+                        System.out.println("ERROR: no es posible comparar Strings con Booleans");
+                        System.exit(0);
+                    } else if (value2 instanceof Integer) {
+                        System.out.println("ERROR: no es posible comparar Strings con Integers");
+                        System.exit(0);
+                    }
+                }
+
                 if (value2 instanceof String){
                     value = operString(oper, (String) value, (String) value2);
                     return value;
+                }
+                return value;
+            }
+
+        }else if (value instanceof  Boolean){
+            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                String oper = (String) visit(ctx.operator(i - 1));
+                Object value2 = visit(ctx.primaryExpression(i));
+                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")) {
+                    if (value2 instanceof String) {
+                        System.out.println("ERROR: no es posible comparar Boolean con Strings");
+                        System.exit(0);
+                    } else if (value2 instanceof Integer) {
+                        System.out.println("ERROR: no es posible comparar Boolean con Integers");
+                        System.exit(0);
+                    }
+                }
+                if (value2 instanceof Boolean){
+                    if(oper.equals("==")){
+                        value = oper(oper, (Boolean) value,(Boolean)value2);
+                        return value;
+                    }else{
+                        System.out.println("ERROR: no es posible comparar Boolean con "+oper);
+                        System.exit(0);
+                    }
+
                 }
                 return value;
             }
@@ -245,19 +281,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         return ctx.getText();
     }
 
-    private int oper(String op, Integer o1, Integer o2){
+    private Object oper(String op, Object o1, Object o2){
         switch(op) {
-            case "+": return o1 + o2;
-            case "-": return o1 - o2;
-            case "*": return o1 * o2;
-            case "/": return o1 / o2;
+            case "+": return (Integer)o1 +(Integer)o2;
+            case "-": return (Integer)o1 - (Integer)o2;
+            case "*": return (Integer)o1 * (Integer)o2;
+            case "/": return (Integer)o1 / (Integer)o2;
+            case "==": if((Boolean) o1==(Boolean) o2){return true;}else return false;
         }
         return 0;
     }
 
-    private String operString(char op, String o1, String o2){
+    private Object operString(String op, String o1, String o2){
         switch(op) {
-            case '+': return o1 + o2;
+            case "+": return o1 + o2;
+            case "==" : if(o1.equals(o2)){return true;}else return false;
         }
         return "";
     }
