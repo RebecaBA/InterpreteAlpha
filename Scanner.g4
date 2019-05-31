@@ -35,10 +35,10 @@ TRUE    : 'true';
 FALSE   : 'false';
 PRINT   : 'print';
 
+BOOLEAN               : TRUE | FALSE;
 ID                    : LETTER (LETTER|DIGIT)* ;
 NUM                   : DIGIT DIGIT* ;
 STRING                :   '"' ('""'|~'"')* '"' ;
-BOOLEAN               : TRUE|FALSE;
 SPECIAL_STRING        :   '"''\\''"' ('""'|~'"')* '\\''"''"' ;
 
 fragment LETTER : 'a'..'z' | 'A'..'Z';

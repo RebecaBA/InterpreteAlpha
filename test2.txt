@@ -8,11 +8,12 @@ in
     begin
         x := 10;
         n := x;
-        new := false;
         res := 1;
         while x do
         begin
             print(res);
+            cadena:= "hola";
+            new := false;
             res := x
         end
     end

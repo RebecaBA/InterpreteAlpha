@@ -1,5 +1,3 @@
-import com.sun.applet2.preloader.event.ErrorEvent;
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 import generated.Parser2;
 import generated.Parser2BaseVisitor;
 import org.antlr.v4.runtime.Token;
@@ -18,6 +16,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     @Override
     public Object visitProgramAST(Parser2.ProgramASTContext ctx) {
         visit(ctx.singleCommand());
+        miTabla.imprimir();
         return null;
     }
 
@@ -50,7 +49,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                 System.out.println("Insertado un Boolean");
                 exists.setValue(visit(ctx.expression()));
             } else {
-                printError("SEMANTIC ERROR: No se puede realizar la asignación verifique verifique los tipos ", ctx.ID().getSymbol());
+                printError("SEMANTIC ERROR: No se puede realizar la asignación verifique ", ctx.ID().getSymbol());
                 System.exit(0);
             }
         }
@@ -81,6 +80,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             }
         } else{
             System.out.println("ERROR!!! ... No es posible realizar un while con el tipo de dato asignado");
+            System.exit(0);
 
         }
         return null;
@@ -90,9 +90,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     public Object visitLetSCAST(Parser2.LetSCASTContext ctx) {
         miTabla.openScope();
         visit(ctx.declaration());
-       // miTabla.imprimir();
         visit(ctx.singleCommand());
-        miTabla.imprimir();
         miTabla.closeScope();
         return null;
     }
@@ -122,19 +120,22 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     public Object visitVarDeclAST(Parser2.VarDeclASTContext ctx) {
 
         Object value = visit(ctx.typedenoter());
-        if(value.equals("string")){
-            //Si es string el valor de typeDenoter inserto con 2
-            miTabla.insertar(ctx.ID().getSymbol(),2);
-        }else if (value.equals("int")){
-            //Si es int el valor de typeDenoter inserto con 1
-            miTabla.insertar(ctx.ID().getSymbol(),1);
-        }else if (value.equals("boolean")){
-            //Si es int el valor de typeDenoter inserto con 1
-            miTabla.insertar(ctx.ID().getSymbol(),3);
+        if(miTabla.buscar(ctx.ID().getSymbol().getText()) == null) {
+            if (value.equals("string")) {
+                //Si es string el valor de typeDenoter inserto con 2
+
+                miTabla.insertar(ctx.ID().getSymbol(), 2);
+            } else if (value.equals("int")) {
+                //Si es int el valor de typeDenoter inserto con 1
+                miTabla.insertar(ctx.ID().getSymbol(), 1);
+            } else if (value.equals("boolean")) {
+                //Si es int el valor de typeDenoter inserto con 1
+                miTabla.insertar(ctx.ID().getSymbol(), 3);
+            } else{
+                System.out.println("TIPO NO INDENTIFICADO" );
+            }
         }
-        else{
-            System.out.println("TIPO NO INDENTIFICADO" );
-        }
+
         visit(ctx.typedenoter());
         return null;
     }
@@ -146,9 +147,11 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
-
+        System.out.println("EL LARGO ES "+ctx.primaryExpression().size());
         Object value = visit(ctx.primaryExpression(0));
-        System.out.println("EN EL EXPRESSION"+value);
+        System.out.println("EN EL EXPRESSION "+value);
+
+
         if(value instanceof Integer){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 char oper = (Character) visit(ctx.operator(i - 1));
@@ -183,24 +186,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             }
 
         }else{
-            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                String oper = (String) visit(ctx.comparison(i - 1));
-                Object value2 = visit(ctx.primaryExpression(i));
-                System.out.println(oper+value2);
-            }
-        }
 
+        }
         return value;
 
     }
 
     @Override
     public Object visitNumPEAST(Parser2.NumPEASTContext ctx) {
+        System.out.println("EN UN NUMPEAST");
         return Integer.parseInt(ctx.NUM().getText());
     }
 
     @Override
     public Object visitIdPEAST(Parser2.IdPEASTContext ctx) {
+        System.out.println("EN UN IDPEAST");
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null){
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
@@ -213,24 +213,27 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitStringPEAST(Parser2.StringPEASTContext ctx) {
+        System.out.println("EN UN STRINGPEAST");
         System.out.println("STRIIIING"+ctx.STRING().getText());
         return ctx.STRING().getText();
     }
 
     @Override
     public Object visitGroupPEAST(Parser2.GroupPEASTContext ctx) {
+        System.out.println("EN UN GROUP_PEAST");
         return visit(ctx.expression());
     }
 
 
     @Override
     public Object visitPrintSCAST(Parser2.PrintSCASTContext ctx) {
+        System.out.println("EN UN PRINTSCAST");
         return visit(ctx.PRINT());
     }
 
     @Override
     public Object visitBooleanPEAST(Parser2.BooleanPEASTContext ctx) {
-        System.out.println("BOOOOOLEEEEEAAAAAN"+ctx.BOOLEAN().getText());
+        System.out.println("EN UN BOLEANDAST");
         return ctx.BOOLEAN().getText();
     }
 

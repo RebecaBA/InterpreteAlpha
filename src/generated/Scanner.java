@@ -20,8 +20,8 @@ public class Scanner extends Lexer {
 		PyCOMA=1, ASSIGN=2, PIZQ=3, PDER=4, VIR=5, DOSPUN=6, SUM=7, SUB=8, MUL=9, 
 		DIV=10, MAYOR=11, MENOR=12, IGUAL=13, MAYORIGUAL=14, MENORIGUAL=15, IF=16, 
 		WHILE=17, LET=18, THEN=19, ELSE=20, IN=21, DO=22, BEGIN=23, END=24, CONST=25, 
-		VAR=26, AND=27, OR=28, TRUE=29, FALSE=30, PRINT=31, ID=32, NUM=33, STRING=34, 
-		BOOLEAN=35, SPECIAL_STRING=36, WS=37;
+		VAR=26, AND=27, OR=28, TRUE=29, FALSE=30, PRINT=31, BOOLEAN=32, ID=33, 
+		NUM=34, STRING=35, SPECIAL_STRING=36, WS=37;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -35,7 +35,7 @@ public class Scanner extends Lexer {
 			"PyCOMA", "ASSIGN", "PIZQ", "PDER", "VIR", "DOSPUN", "SUM", "SUB", "MUL", 
 			"DIV", "MAYOR", "MENOR", "IGUAL", "MAYORIGUAL", "MENORIGUAL", "IF", "WHILE", 
 			"LET", "THEN", "ELSE", "IN", "DO", "BEGIN", "END", "CONST", "VAR", "AND", 
-			"OR", "TRUE", "FALSE", "PRINT", "ID", "NUM", "STRING", "BOOLEAN", "SPECIAL_STRING", 
+			"OR", "TRUE", "FALSE", "PRINT", "BOOLEAN", "ID", "NUM", "STRING", "SPECIAL_STRING", 
 			"LETTER", "DIGIT", "WS"
 		};
 	}
@@ -55,8 +55,8 @@ public class Scanner extends Lexer {
 			null, "PyCOMA", "ASSIGN", "PIZQ", "PDER", "VIR", "DOSPUN", "SUM", "SUB", 
 			"MUL", "DIV", "MAYOR", "MENOR", "IGUAL", "MAYORIGUAL", "MENORIGUAL", 
 			"IF", "WHILE", "LET", "THEN", "ELSE", "IN", "DO", "BEGIN", "END", "CONST", 
-			"VAR", "AND", "OR", "TRUE", "FALSE", "PRINT", "ID", "NUM", "STRING", 
-			"BOOLEAN", "SPECIAL_STRING", "WS"
+			"VAR", "AND", "OR", "TRUE", "FALSE", "PRINT", "BOOLEAN", "ID", "NUM", 
+			"STRING", "SPECIAL_STRING", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -130,9 +130,9 @@ public class Scanner extends Lexer {
 		"\24\3\24\3\25\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\27\3\27\3\27\3\30\3"+
 		"\30\3\30\3\30\3\30\3\30\3\31\3\31\3\31\3\31\3\32\3\32\3\32\3\32\3\32\3"+
 		"\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\35\3\35\3\35\3\36\3\36\3"+
-		"\36\3\36\3\36\3\37\3\37\3\37\3\37\3\37\3\37\3 \3 \3 \3 \3 \3 \3!\3!\3"+
-		"!\7!\u00c0\n!\f!\16!\u00c3\13!\3\"\3\"\7\"\u00c7\n\"\f\"\16\"\u00ca\13"+
-		"\"\3#\3#\3#\3#\7#\u00d0\n#\f#\16#\u00d3\13#\3#\3#\3$\3$\5$\u00d9\n$\3"+
+		"\36\3\36\3\36\3\37\3\37\3\37\3\37\3\37\3\37\3 \3 \3 \3 \3 \3 \3!\3!\5"+
+		"!\u00bf\n!\3\"\3\"\3\"\7\"\u00c4\n\"\f\"\16\"\u00c7\13\"\3#\3#\7#\u00cb"+
+		"\n#\f#\16#\u00ce\13#\3$\3$\3$\3$\7$\u00d4\n$\f$\16$\u00d7\13$\3$\3$\3"+
 		"%\3%\3%\3%\3%\3%\7%\u00e1\n%\f%\16%\u00e4\13%\3%\3%\3%\3%\3&\3&\3\'\3"+
 		"\'\3(\6(\u00ef\n(\r(\16(\u00f0\3(\3(\2\2)\3\3\5\4\7\5\t\6\13\7\r\b\17"+
 		"\t\21\n\23\13\25\f\27\r\31\16\33\17\35\20\37\21!\22#\23%\24\'\25)\26+"+
@@ -149,8 +149,8 @@ public class Scanner extends Lexer {
 		"\33j\3\2\2\2\35m\3\2\2\2\37p\3\2\2\2!s\3\2\2\2#v\3\2\2\2%|\3\2\2\2\'\u0080"+
 		"\3\2\2\2)\u0085\3\2\2\2+\u008a\3\2\2\2-\u008d\3\2\2\2/\u0090\3\2\2\2\61"+
 		"\u0096\3\2\2\2\63\u009a\3\2\2\2\65\u00a0\3\2\2\2\67\u00a4\3\2\2\29\u00a8"+
-		"\3\2\2\2;\u00ab\3\2\2\2=\u00b0\3\2\2\2?\u00b6\3\2\2\2A\u00bc\3\2\2\2C"+
-		"\u00c4\3\2\2\2E\u00cb\3\2\2\2G\u00d8\3\2\2\2I\u00da\3\2\2\2K\u00e9\3\2"+
+		"\3\2\2\2;\u00ab\3\2\2\2=\u00b0\3\2\2\2?\u00b6\3\2\2\2A\u00be\3\2\2\2C"+
+		"\u00c0\3\2\2\2E\u00c8\3\2\2\2G\u00cf\3\2\2\2I\u00da\3\2\2\2K\u00e9\3\2"+
 		"\2\2M\u00eb\3\2\2\2O\u00ee\3\2\2\2QR\7=\2\2R\4\3\2\2\2ST\7<\2\2TU\7?\2"+
 		"\2U\6\3\2\2\2VW\7*\2\2W\b\3\2\2\2XY\7+\2\2Y\n\3\2\2\2Z[\7\u0080\2\2[\f"+
 		"\3\2\2\2\\]\7<\2\2]\16\3\2\2\2^_\7-\2\2_\20\3\2\2\2`a\7/\2\2a\22\3\2\2"+
@@ -173,26 +173,26 @@ public class Scanner extends Lexer {
 		"\7w\2\2\u00ae\u00af\7g\2\2\u00af<\3\2\2\2\u00b0\u00b1\7h\2\2\u00b1\u00b2"+
 		"\7c\2\2\u00b2\u00b3\7n\2\2\u00b3\u00b4\7u\2\2\u00b4\u00b5\7g\2\2\u00b5"+
 		">\3\2\2\2\u00b6\u00b7\7r\2\2\u00b7\u00b8\7t\2\2\u00b8\u00b9\7k\2\2\u00b9"+
-		"\u00ba\7p\2\2\u00ba\u00bb\7v\2\2\u00bb@\3\2\2\2\u00bc\u00c1\5K&\2\u00bd"+
-		"\u00c0\5K&\2\u00be\u00c0\5M\'\2\u00bf\u00bd\3\2\2\2\u00bf\u00be\3\2\2"+
-		"\2\u00c0\u00c3\3\2\2\2\u00c1\u00bf\3\2\2\2\u00c1\u00c2\3\2\2\2\u00c2B"+
-		"\3\2\2\2\u00c3\u00c1\3\2\2\2\u00c4\u00c8\5M\'\2\u00c5\u00c7\5M\'\2\u00c6"+
-		"\u00c5\3\2\2\2\u00c7\u00ca\3\2\2\2\u00c8\u00c6\3\2\2\2\u00c8\u00c9\3\2"+
-		"\2\2\u00c9D\3\2\2\2\u00ca\u00c8\3\2\2\2\u00cb\u00d1\7$\2\2\u00cc\u00cd"+
-		"\7$\2\2\u00cd\u00d0\7$\2\2\u00ce\u00d0\n\2\2\2\u00cf\u00cc\3\2\2\2\u00cf"+
-		"\u00ce\3\2\2\2\u00d0\u00d3\3\2\2\2\u00d1\u00cf\3\2\2\2\u00d1\u00d2\3\2"+
-		"\2\2\u00d2\u00d4\3\2\2\2\u00d3\u00d1\3\2\2\2\u00d4\u00d5\7$\2\2\u00d5"+
-		"F\3\2\2\2\u00d6\u00d9\5;\36\2\u00d7\u00d9\5=\37\2\u00d8\u00d6\3\2\2\2"+
-		"\u00d8\u00d7\3\2\2\2\u00d9H\3\2\2\2\u00da\u00db\7$\2\2\u00db\u00dc\7^"+
-		"\2\2\u00dc\u00e2\7$\2\2\u00dd\u00de\7$\2\2\u00de\u00e1\7$\2\2\u00df\u00e1"+
-		"\n\2\2\2\u00e0\u00dd\3\2\2\2\u00e0\u00df\3\2\2\2\u00e1\u00e4\3\2\2\2\u00e2"+
-		"\u00e0\3\2\2\2\u00e2\u00e3\3\2\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00e2\3\2"+
-		"\2\2\u00e5\u00e6\7^\2\2\u00e6\u00e7\7$\2\2\u00e7\u00e8\7$\2\2\u00e8J\3"+
-		"\2\2\2\u00e9\u00ea\t\3\2\2\u00eaL\3\2\2\2\u00eb\u00ec\4\62;\2\u00ecN\3"+
-		"\2\2\2\u00ed\u00ef\t\4\2\2\u00ee\u00ed\3\2\2\2\u00ef\u00f0\3\2\2\2\u00f0"+
-		"\u00ee\3\2\2\2\u00f0\u00f1\3\2\2\2\u00f1\u00f2\3\2\2\2\u00f2\u00f3\b("+
-		"\2\2\u00f3P\3\2\2\2\f\2\u00bf\u00c1\u00c8\u00cf\u00d1\u00d8\u00e0\u00e2"+
-		"\u00f0\3\b\2\2";
+		"\u00ba\7p\2\2\u00ba\u00bb\7v\2\2\u00bb@\3\2\2\2\u00bc\u00bf\5;\36\2\u00bd"+
+		"\u00bf\5=\37\2\u00be\u00bc\3\2\2\2\u00be\u00bd\3\2\2\2\u00bfB\3\2\2\2"+
+		"\u00c0\u00c5\5K&\2\u00c1\u00c4\5K&\2\u00c2\u00c4\5M\'\2\u00c3\u00c1\3"+
+		"\2\2\2\u00c3\u00c2\3\2\2\2\u00c4\u00c7\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5"+
+		"\u00c6\3\2\2\2\u00c6D\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8\u00cc\5M\'\2\u00c9"+
+		"\u00cb\5M\'\2\u00ca\u00c9\3\2\2\2\u00cb\u00ce\3\2\2\2\u00cc\u00ca\3\2"+
+		"\2\2\u00cc\u00cd\3\2\2\2\u00cdF\3\2\2\2\u00ce\u00cc\3\2\2\2\u00cf\u00d5"+
+		"\7$\2\2\u00d0\u00d1\7$\2\2\u00d1\u00d4\7$\2\2\u00d2\u00d4\n\2\2\2\u00d3"+
+		"\u00d0\3\2\2\2\u00d3\u00d2\3\2\2\2\u00d4\u00d7\3\2\2\2\u00d5\u00d3\3\2"+
+		"\2\2\u00d5\u00d6\3\2\2\2\u00d6\u00d8\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d8"+
+		"\u00d9\7$\2\2\u00d9H\3\2\2\2\u00da\u00db\7$\2\2\u00db\u00dc\7^\2\2\u00dc"+
+		"\u00e2\7$\2\2\u00dd\u00de\7$\2\2\u00de\u00e1\7$\2\2\u00df\u00e1\n\2\2"+
+		"\2\u00e0\u00dd\3\2\2\2\u00e0\u00df\3\2\2\2\u00e1\u00e4\3\2\2\2\u00e2\u00e0"+
+		"\3\2\2\2\u00e2\u00e3\3\2\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00e2\3\2\2\2\u00e5"+
+		"\u00e6\7^\2\2\u00e6\u00e7\7$\2\2\u00e7\u00e8\7$\2\2\u00e8J\3\2\2\2\u00e9"+
+		"\u00ea\t\3\2\2\u00eaL\3\2\2\2\u00eb\u00ec\4\62;\2\u00ecN\3\2\2\2\u00ed"+
+		"\u00ef\t\4\2\2\u00ee\u00ed\3\2\2\2\u00ef\u00f0\3\2\2\2\u00f0\u00ee\3\2"+
+		"\2\2\u00f0\u00f1\3\2\2\2\u00f1\u00f2\3\2\2\2\u00f2\u00f3\b(\2\2\u00f3"+
+		"P\3\2\2\2\f\2\u00be\u00c3\u00c5\u00cc\u00d3\u00d5\u00e0\u00e2\u00f0\3"+
+		"\b\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
