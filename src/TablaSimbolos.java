@@ -50,6 +50,21 @@ public class TablaSimbolos {
         return temp;
     }
 
+    public Ident buscarPorNivel (String identificador){
+        Ident temp = null;
+        for(Object id : tabla){
+            if (((Ident)id).nivel==this.nivelActual) {
+                if (((Ident) id).tok.getText().equals(identificador)) {
+                    temp = ((Ident) id);
+                }
+            }
+
+        }
+
+        return temp;
+    };
+
+
     public void openScope()
     {
 

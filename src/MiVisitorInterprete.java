@@ -166,10 +166,6 @@ public class MiVisitorInterprete extends Parser2BaseVisitor<Object> {
             return null;
         }
 
-        @Override
-        public Object visitComparison(Parser2.ComparisonContext ctx) {
-            return null;
-        }
 
         @Override
         public Object visitOperator(Parser2.OperatorContext ctx) {

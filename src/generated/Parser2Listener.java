@@ -245,14 +245,4 @@ public interface Parser2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOperator(Parser2.OperatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Parser2#comparison}.
-	 * @param ctx the parse tree
-	 */
-	void enterComparison(Parser2.ComparisonContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Parser2#comparison}.
-	 * @param ctx the parse tree
-	 */
-	void exitComparison(Parser2.ComparisonContext ctx);
 }

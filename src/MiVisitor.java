@@ -3,6 +3,7 @@ import generated.Parser2BaseVisitor;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.util.ArrayList;
 import java.util.IllegalFormatException;
 
 
@@ -43,19 +44,19 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null) {
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
+            System.exit(0);
         }else {
 
             Object valor = visit(ctx.expression());
 
-            //System.out.println("Before insertions " + valor);
             if (valor instanceof Integer && exists.type == 1) {
-                //System.out.println("Insertado un integer");
+
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof String && exists.type == 2) {
-               // System.out.println("Insertado un string");
+
                 exists.setValue(visit(ctx.expression()));
             } else if (valor instanceof Boolean && exists.type == 3) {
-                //System.out.println("Insertado un Boolean");
+
                 exists.setValue(visit(ctx.expression()));
             } else {
                 printError("SEMANTIC ERROR: No se puede realizar la asignación verifique ", ctx.ID().getSymbol());
@@ -74,7 +75,12 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitIfSCAST(Parser2.IfSCASTContext ctx) {
-        visit(ctx.expression());
+        Object expresion = visit(ctx.expression());
+        System.out.println("EN EL IF "+expresion);
+        if(expresion instanceof String){
+            System.out.println("No es posible realizar un IF con un string");
+            System.exit(0);
+        }
         visit(ctx.singleCommand(0));
         visit(ctx.singleCommand(1));
         return null;
@@ -131,23 +137,21 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     public Object visitVarDeclAST(Parser2.VarDeclASTContext ctx) {
 
         Object value = visit(ctx.typedenoter());
-        if(miTabla.buscar(ctx.ID().getSymbol().getText()) == null) {
+        if(miTabla.buscarPorNivel(ctx.ID().getSymbol().getText()) == null) {
             if (value.equals("string")) {
                 //Si es string el valor de typeDenoter inserto con 2
-
                 miTabla.insertar(ctx.ID().getSymbol(), 2);
             } else if (value.equals("int")) {
                 //Si es int el valor de typeDenoter inserto con 1
                 miTabla.insertar(ctx.ID().getSymbol(), 1);
             } else if (value.equals("boolean")) {
-                //Si es int el valor de typeDenoter inserto con 1
+                //Si es int el valor de typeDenoter inserto con 3
                 miTabla.insertar(ctx.ID().getSymbol(), 3);
-            } else{
-                System.out.println("TIPO NO INDENTIFICADO" );
+            } else {
+                System.out.println("TIPO NO INDENTIFICADO");
             }
         }
 
-        visit(ctx.typedenoter());
         return null;
     }
 
@@ -159,71 +163,54 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
 
-        Object value1 = visit(ctx.primaryExpression(0));
-        Object value2;
-        String cmp_opr;
+        Object value = visit(ctx.primaryExpression(0));
+        if(value instanceof Integer){
+            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                String oper = (String) visit(ctx.operator(i - 1));
+                Object value2 = visit(ctx.primaryExpression(i));
+                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")||oper.equals("==")){
+                    if(value2 instanceof Boolean){
+                        System.out.println("ERROR: no es posible comparar Integers con Booleans");
+                        System.exit(0);
+                    }
+                    if(value2 instanceof String){
+                        System.out.println("ERROR: no es posible comparar Integers con Strings");
+                        System.exit(0);
+                    }
+                }
 
+                if (value2 instanceof Integer){
+                    value = oper(oper, (Integer) value, (Integer) value2);
+                    return value;
+                }
+            }
 
-
-        if (ctx.comparison(0) != null){
-            System.out.println("SOY CMP DEL WHILE" + ctx.comparison(0).getText());
+        }
+        else if (value instanceof String){
+            for (int i = 1; i < ctx.primaryExpression().size(); i++) {
+                char oper = (Character) visit(ctx.operator(i - 1));
+                Object value2 = visit(ctx.primaryExpression(i));
+                if (value2 instanceof String){
+                    value = operString(oper, (String) value, (String) value2);
+                    return value;
+                }
+            }
         }
 
-        else {
-            if(value1 instanceof Integer){
-                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                    char oper = (Character) visit(ctx.operator(i - 1));
-                    value2 = visit(ctx.primaryExpression(i));
-                    System.out.println("Entróoooo 1");
-                    if (value2 instanceof Integer){
-                        value1 = oper(oper, (Integer) value1, (Integer) value2);
-                        return value1;
-                    }
-                    return value1;
-                }
-            }
+        return value;
 
-            else if (value1 instanceof Boolean){
-                //System.out.println("SOY INSTANCIA DE BOOLEAN");
-                System.out.println("Entróoooo 2");
-                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                    visit(ctx.comparison(i - 1));
-                    visit(ctx.primaryExpression(i));
-                }
-            }
-
-
-            else if (value1 instanceof String){
-                System.out.println("Entróoooo 3");
-                //System.out.println("SIZE: " + ctx.primaryExpression().size());
-                for (int i = 1; i < ctx.primaryExpression().size(); i++) {
-                    String oper = (String) visit(ctx.operator(i - 1));
-                    value2 = visit(ctx.primaryExpression(i));
-                    if (value2 instanceof String){
-                        if(oper =="<"|oper ==">"|oper =="<="|oper ==">="){
-                            System.out.println("SEMANTIC ERROR: No es posible realizar la comparacion con { >,<,>=,<=} intente con ==");
-                            System.exit(0);
-                        }
-                        value1 = operString(oper, (String) value1, (String) value2);
-                        return value1;
-                    }
-                    return value1;
-                }
-            }
-            return value1;
-        }
-        return value1;
     }
+
+
 
     @Override
     public Object visitNumPEAST(Parser2.NumPEASTContext ctx) {
-        //System.out.println("EN UN NUMPEAST");
+
         return Integer.parseInt(ctx.NUM().getText());
     }
 
     @Override
     public Object visitIdPEAST(Parser2.IdPEASTContext ctx) {
-        //System.out.println("EN UN IDPEAST");
         TablaSimbolos.Ident exists = miTabla.buscar(ctx.ID().getText());
         if (exists == null){
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
@@ -231,26 +218,23 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         }
         else
             return exists.valor;
-        return null;
+        return  null;
     }
 
     @Override
     public Object visitStringPEAST(Parser2.StringPEASTContext ctx) {
-        //System.out.println("EN UN STRINGPEAST");
-        //System.out.println("STRIIIING"+ctx.STRING().getText());
         return ctx.STRING().getText();
     }
 
     @Override
     public Object visitGroupPEAST(Parser2.GroupPEASTContext ctx) {
-        //System.out.println("EN UN GROUP_PEAST");
         return visit(ctx.expression());
     }
 
 
     @Override
     public Object visitPrintSCAST(Parser2.PrintSCASTContext ctx) {
-        //System.out.println("EN UN PRINTSCAST");
+        visit(ctx.expression());
         return visit(ctx.PRINT());
     }
 
@@ -265,47 +249,30 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         return null;
     }
 
-    @Override
-    public Object visitComparison(Parser2.ComparisonContext ctx) {
-        return ctx.getText().charAt(0);
-    }
 
     @Override
     public Object visitOperator(Parser2.OperatorContext ctx) {
-        return ctx.getText().charAt(0);
+        return ctx.getText();
     }
 
-    private int oper(char op, Integer o1, Integer o2){
+    private int oper(String op, Integer o1, Integer o2){
         switch(op) {
-            case '+': return o1 + o2;
-            case '-': return o1 - o2;
-            case '*': return o1 * o2;
-            case '/': return o1 / o2;
+            case "+": return o1 + o2;
+            case "-": return o1 - o2;
+            case "*": return o1 * o2;
+            case "/": return o1 / o2;
         }
         return 0;
     }
-    private Boolean logicCompare (String op, Integer o1, Integer o2){
-        switch(op) {
-            case ">":
-                return o1 > o2;
-            case ">=":
-                return o1 >= o2;
-            case "<=":
-                return o1 <= o2;
-            case "<":
-                return o1 < o2;
-            case "==":
-                return o1.equals(o2);
-        }
-        return false;
-    }
 
-    private String operString(String op, String o1, String o2){
-        if ("+".equals(op)) {
+
+    private String operString(char op, String o1, String o2){
+        if (op == '+') {
             return o1 + o2;
         }
         return "";
     }
+
 
     private void printError(String msg, Token t){
         System.out.println(msg +

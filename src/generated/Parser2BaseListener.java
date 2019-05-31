@@ -251,18 +251,6 @@ public class Parser2BaseListener implements Parser2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitOperator(Parser2.OperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterComparison(Parser2.ComparisonContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitComparison(Parser2.ComparisonContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
