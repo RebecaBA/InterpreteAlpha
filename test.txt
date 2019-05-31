@@ -19,13 +19,13 @@ in
                         y :=10;
                         m := true
                     end;
-                while y<m do
+                while y do
                      begin
                         print("hi")
                      end
              end;
          l := "GG";
-         if(2<3) then
+         if(true == false) then
             y:=y+2
          else
             y:= y+1;

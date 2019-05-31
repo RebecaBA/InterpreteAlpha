@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369d1e4-3217-4135-a404-1faea26c92fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Parser2.g4" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Scanner.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Alpha/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alpha/MiVisitor.class" afterDir="false" />
@@ -33,6 +33,10 @@
       <change beforePath="$PROJECT_DIR$/src/generated/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/Scanner.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/Scanner.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test2.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
     </list>
     <ignored path="Alpha.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,17 +50,90 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+<<<<<<< HEAD
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+=======
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Parser2.g4">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="560">
+                    <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Scanner.g4">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="400">
+                    <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Alpha" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scanner.g4">
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ParserManual.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TablaSimbolos.java">
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-9">
               <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
@@ -85,6 +162,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="402">
               <caret line="184" column="17" lean-forward="true" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
               <folding>
@@ -92,6 +170,17 @@
                 <element signature="e#7460#7461#0" expanded="true" />
                 <element signature="e#7588#7589#0" expanded="true" />
                 <element signature="e#8155#8156#0" expanded="true" />
+=======
+            <state relative-caret-position="301">
+              <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4706#4707#0" expanded="true" />
+                <element signature="e#4742#4743#0" expanded="true" />
+                <element signature="e#8861#8862#0" expanded="true" />
+                <element signature="e#8989#8990#0" expanded="true" />
+                <element signature="e#9556#9557#0" expanded="true" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
               </folding>
             </state>
           </provider>
@@ -145,6 +234,10 @@
       <find>seman</find>
       <find>ifSCA</find>
       <find>hay</find>
+      <find>ERROR!!! ... No es posibl</find>
+      <find>No es posible realizar un IF con un string</find>
+      <find>printE</find>
+      <find>n</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,13 +254,23 @@
         <option value="$PROJECT_DIR$/src/TablaSimbolos.java" />
         <option value="$PROJECT_DIR$/src/MiVisitorInterprete.java" />
         <option value="$PROJECT_DIR$/test.txt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test2.txt" />
         <option value="$PROJECT_DIR$/Scanner.g4" />
         <option value="$PROJECT_DIR$/Parser2.g4" />
         <option value="$PROJECT_DIR$/src/MiVisitor.java" />
+=======
+        <option value="$PROJECT_DIR$/Parser2.g4" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-39" />
@@ -223,8 +326,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559333350589" />
     <property name="last_opened_file_path" value="$USER_HOME$/Quiz Bytecode/Alpha_Jaffette" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559337529527" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Quiz Bytecode/Alpha_Jaffette" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -400,15 +508,19 @@
       <workItem from="1559248883330" duration="2362000" />
       <workItem from="1559251644897" duration="11884000" />
       <workItem from="1559265446398" duration="14496000" />
-      <workItem from="1559326133438" duration="6698000" />
+      <workItem from="1559326133438" duration="10446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50431000" />
+    <option name="totallyTimeSpent" value="54179000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+=======
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17549168" />
@@ -420,7 +532,11 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32976827" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.47954175" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3243626" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,12 +550,12 @@
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -615,6 +731,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/MiVisitorInterprete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -653,6 +770,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test2.txt">
+=======
+    <entry file="file://$PROJECT_DIR$/src/TablaSimbolos.java">
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
@@ -673,8 +793,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiVisitorInterprete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3863#3864#0" expanded="true" />
+            <element signature="e#3931#3932#0" expanded="true" />
+            <element signature="e#4287#4288#0" expanded="true" />
+            <element signature="e#4341#4342#0" expanded="true" />
+            <element signature="e#4432#4433#0" expanded="true" />
+            <element signature="e#4486#4487#0" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="e#4826#4827#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MiVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="402">
           <caret line="184" column="17" lean-forward="true" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
           <folding>
@@ -682,10 +823,45 @@
             <element signature="e#7460#7461#0" expanded="true" />
             <element signature="e#7588#7589#0" expanded="true" />
             <element signature="e#8155#8156#0" expanded="true" />
+=======
+        <state relative-caret-position="301">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4706#4707#0" expanded="true" />
+            <element signature="e#4742#4743#0" expanded="true" />
+            <element signature="e#8861#8862#0" expanded="true" />
+            <element signature="e#8989#8990#0" expanded="true" />
+            <element signature="e#9556#9557#0" expanded="true" />
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser2.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> afce6e72206f2f0828e2482863a4b5a954807581
   </component>
   <component name="masterDetails">
     <states>

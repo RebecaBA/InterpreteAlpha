@@ -1029,8 +1029,8 @@ public class Parser2 extends Parser {
 		public TerminalNode IGUAL() { return getToken(Parser2.IGUAL, 0); }
 		public TerminalNode MAYORIGUAL() { return getToken(Parser2.MAYORIGUAL, 0); }
 		public TerminalNode MENORIGUAL() { return getToken(Parser2.MENORIGUAL, 0); }
-		public TerminalNode OR() { return getToken(Parser2.OR, 0); }
 		public TerminalNode AND() { return getToken(Parser2.AND, 0); }
+		public TerminalNode OR() { return getToken(Parser2.OR, 0); }
 		public OperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
