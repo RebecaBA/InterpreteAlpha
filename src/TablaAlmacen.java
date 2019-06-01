@@ -1,17 +1,18 @@
-import java.util.ArrayList;
+
 import java.util.LinkedList;
 
 public class TablaAlmacen {
 
     LinkedList<Object> almacenGlobal;
-    LinkedList<Object> almacenLocal;
+
     private int nivelActual;
 
-    public class Almacen{
+    class Almacen{
+
         String nombre ;
         Object valor ;
-
         int nivel;
+
         public Almacen(String n){
              nombre = n;
              valor = null;
@@ -20,6 +21,7 @@ public class TablaAlmacen {
         }
         public void setValue(Object value)
         {
+
             valor = value;
         }
 
@@ -27,32 +29,33 @@ public class TablaAlmacen {
 
     public TablaAlmacen() {
         almacenGlobal = new LinkedList<Object>();
-        almacenLocal = new LinkedList<Object>();
         this.nivelActual = -1;
     }
 
-   /* public void insertarGlobal(String nombre)
+    public void insertar(String nombre)
     {
-        Almacen i = new Almacen(nombre,valor);
+        Almacen i = new Almacen(nombre);
         almacenGlobal.add(i);
-    }*/
+    }
 
-  /*  public Almacen buscar(String nombre)
+    public Almacen buscar(String nomb)
     {
         //debe buscarse en otro orden... de atrás para adelante
-        Ident temp=null;
-        for(Object id : tabla)
-            if (((Ident)id).tok.getText().equals(nombre))
-                temp = ((Ident)id);
+        Almacen temp=null;
+        for(Object id : almacenGlobal) {
+            if (((Almacen) id).nombre.equals(nomb)) {
+                temp = (Almacen) id;
+            }
+        }
         return temp;
     }
 
-    public Ident buscarPorNivel (String identificador){
-        Ident temp = null;
-        for(Object id : tabla){
-            if (((Ident)id).nivel==this.nivelActual) {
-                if (((Ident) id).tok.getText().equals(identificador)) {
-                    temp = ((Ident) id);
+    public Almacen buscarPorNivel (String identificador){
+        Almacen temp = null;
+        for(Object id : almacenGlobal){
+            if (((Almacen)id).nivel==this.nivelActual) {
+                if (((Almacen) id).nombre.equals(identificador)) {
+                    temp = ((Almacen) id);
                 }
             }
 
@@ -60,7 +63,7 @@ public class TablaAlmacen {
 
         return temp;
     };
-*/
+
 
     public void openScope()
     {
@@ -74,26 +77,16 @@ public class TablaAlmacen {
         nivelActual--;
     }
 
-   /* public void imprimir() {
-        System.out.println("----- INICIO TABLA ------");
+    public void imprimir() {
+        System.out.println("----- INICIO Almacen ------");
         String tipoVariable ="";
-        for (int i = 0; i < tabla.size(); i++) {
-            Token s = (Token) ((Ident) tabla.get(i)).tok;
-            if(((Ident) tabla.get(i)).type == 1){
-                tipoVariable = "int";
-            }
-            else if(((Ident) tabla.get(i)).type == 2){
-                tipoVariable = "string";
-            }
-            else if(((Ident) tabla.get(i)).type == 3){
-                tipoVariable = "boolean";
-            }
-
-            System.out.println("Nombre: " + s.getText() + " - NIVEL: " + ((Ident) tabla.get(i)).nivel +" - TIPO :"+tipoVariable+ " - VALOR: " + ((Ident) tabla.get(i)).valor);
+        for (int i = 0; i < almacenGlobal.size(); i++) {
+            Almacen var = (Almacen)almacenGlobal.get(i);
+            System.out.println("Nombre: " + var.nombre + " - NIVEL: " +var.nivel +" - VALOR: " +var.valor);
 
         }
-        System.out.println("----- FIN TABLA ------");
-    }*/
+        System.out.println("----- FIN Almacen ------");
+    }
 
 
 }

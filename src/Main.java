@@ -33,7 +33,9 @@ public class Main {
                 java.util.concurrent.Future<JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree, parser);
                 treeGUI.get().setVisible(true);
                 MiVisitor mv = new MiVisitor();
+                MiVisitorInterprete mvi = new MiVisitorInterprete();
                 mv.visit(tree);
+                mvi.visit(tree);
             }
             catch(RecognitionException e){
                 System.out.println("Error!!!");

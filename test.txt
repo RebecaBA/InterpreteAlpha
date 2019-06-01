@@ -2,7 +2,8 @@ let
     var y : int;
     var l : string;
     var g : string;
-    var m : boolean
+    var m : boolean;
+    var n : boolean
 in
     begin
         let
@@ -17,8 +18,8 @@ in
                 in
                     begin
                         y :=10;
-                        m := true
-                        g := "Hi"
+                        m := false;
+                        n := true
                     end;
                 while (g == "Hola" and y == 10) do
                      begin
@@ -26,13 +27,16 @@ in
                      end
              end;
          l := "GG";
-         if(true and true) then
-            y:=y+2
+         if(m or n) then
+           y:= y*5
          else
+            print("ENTRA AL ELSE");
             y:= y+1;
             g :="Robert";
             y:=y+3;
-         print(y)
+         print(y);
+         print(g);
+         print(m)
 
 
     end
