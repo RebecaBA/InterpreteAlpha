@@ -2,7 +2,6 @@ import generated.Parser2;
 import generated.Parser2BaseVisitor;
 import org.antlr.v4.runtime.Token;
 
-import java.util.ArrayList;
 import java.util.IllegalFormatException;
 
 
@@ -37,25 +36,23 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             printError("SEMANTIC ERROR: Undefined identifier ", ctx.ID().getSymbol());
             System.exit(0);
         }else {
-
             Object valor = visit(ctx.expression());
 
-
             if (valor instanceof Integer && exists.type == 1) {
-
                 exists.setValue(visit(ctx.expression()));
+
             } else if (valor instanceof String && exists.type == 2) {
-
                 exists.setValue(visit(ctx.expression()));
+
             } else if (valor instanceof Boolean && exists.type == 3) {
-
                 exists.setValue(visit(ctx.expression()));
+
             } else {
                 printError("SEMANTIC ERROR: No se puede realizar la asignación verifique ", ctx.ID().getSymbol());
                 System.exit(0);
             }
         }
-        return null;
+        return "del Asign";
     }
 
     //Funcion que imprimir
@@ -68,13 +65,16 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     @Override
     public Object visitIfSCAST(Parser2.IfSCASTContext ctx) {
         Object expresion = visit(ctx.expression());
-        System.out.println("EN EL IF "+expresion);
         if(expresion instanceof String){
             System.out.println("No es posible comparar Strings con ese operador lógico");
             System.exit(0);
+        }else if (expresion instanceof Boolean){
+            Object expresion2 = visit(ctx.singleCommand(0));
+
+            Object expresion3 =visit(ctx.singleCommand(1));
+
         }
-        visit(ctx.singleCommand(0));
-        visit(ctx.singleCommand(1));
+
         return null;
     }
 /*****************************HABILITAR DIFERENTES COMPARACIONES**************************************/
@@ -151,7 +151,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                 System.out.println("TIPO NO INDENTIFICADO");
             }
         }else{
-            printError("NO PUEDE DECLARAR VARIABLES CON EL MISMO NOMBRE EN EL MISMO NIVEL",ctx.ID().getSymbol());
+            printError("NO PUEDE DECLARAR VARIABLES CON EL MISMO NOMBRE EN EL MISMO NIVEL ",ctx.ID().getSymbol());
             System.exit(0);
 
         }
@@ -331,7 +331,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             case "/"   : return (Integer)o1 / (Integer)o2;
             case "=="  : if((Boolean) o1 == (Boolean) o2){return true;}else return false;
             case "and" : if((Boolean) o1 && (Boolean) o2){return true;}else return false;
-            case "or:" : if((Boolean) o1 && (Boolean) o2){return true;}else return false;
+            case "or"  : if((Boolean) o1 || (Boolean) o2){return true;}else return false;
         }
         return 0;
     }

@@ -11,6 +11,7 @@ public class TablaSimbolos {
     private int nivelActual;
 
     class Ident{
+
         Token tok;
         int type; // 1 para int 2 para String y 3 para Boolean
         int nivel;
@@ -43,7 +44,6 @@ public class TablaSimbolos {
 
     public Ident buscar(String nombre)
     {
-        //debe buscarse en otro orden... de atrás para adelante
         Ident temp=null;
         for(Object id : tabla)
             if (((Ident)id).tok.getText().equals(nombre))

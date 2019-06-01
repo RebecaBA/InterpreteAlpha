@@ -31,7 +31,9 @@ public class Main {
             try {
                 tree = parser.program();
                 MiVisitor mv = new MiVisitor();
+                MiVisitorInterprete mvi = new MiVisitorInterprete();
                 mv.visit(tree);
+                mvi.visit(tree);
             }
             catch(RecognitionException e){
                 System.out.println("Error!!!");

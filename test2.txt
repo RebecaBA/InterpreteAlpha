@@ -1,19 +1,39 @@
 let
-    var new : boolean;
-    var x : int;
-    var n : int;
-    var res : int;
-    var cadena: string
+    var y : int;
+    var y : string;
+    var l : string;
+    var g : string;
+    var m : boolean
 in
     begin
-        x := 10;
-        n := x;
-        res := 1;
-        new := false;
-        while x do
-        begin
-            print(res);
-            cadena:= "hola";
-            res := x
-        end
+        let
+            var y : int;
+            var w : string
+        in
+            begin
+
+                let
+                    var y : int;
+                    var w : string
+                in
+                    begin
+                        y :=10;
+                        m := true
+                    end;
+                while true and m do
+                     begin
+                        print("hi")
+                     end
+             end;
+         l := "GG";
+         if(true and true) then
+            y:=y+2
+         else
+            y:= y+1;
+            g :="Robert";
+            y:=y+3;
+         print(y)
+
+
     end
+
