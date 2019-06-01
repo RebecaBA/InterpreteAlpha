@@ -15,7 +15,7 @@ public class Main {
         CommonTokenStream tokens = null;
         MyErrorListener errorListener = null;
         try {
-            input = CharStreams.fromFileName("test2.txt");
+            input = CharStreams.fromFileName("test.txt");
             inst = new Scanner(input);
             tokens = new CommonTokenStream(inst);
             parser = new Parser2(tokens);
@@ -40,7 +40,7 @@ public class Main {
                 e.printStackTrace();
             }
 
-            if (errorListener.hasErrors() == false) {
+            if (!errorListener.hasErrors()) {
                 System.out.println("Compilación Exitosa!!\n");
 
             }

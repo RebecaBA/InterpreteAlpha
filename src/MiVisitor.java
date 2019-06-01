@@ -162,15 +162,14 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
-
         Object value = visit(ctx.primaryExpression(0));
+        Boolean result1 = false;
         if(value instanceof Integer){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
 
                 if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")||oper.equals("==")){
-                    System.out.println("VALUEEE 2: " + ctx.primaryExpression(i).getText());
                     if(value2 instanceof Boolean){
                         System.out.println("ERROR: no es posible comparar Integers con Booleans");
                         System.exit(0);
@@ -180,8 +179,13 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.exit(0);
                     }
                     else if (value2 instanceof Integer){
+                        result1 = true;
+                        System.out.println("TODOO COOOOOOOL");
                         System.exit(0);
                     }
+                }
+                else if (oper.equals("or")||oper.equals("and")){
+                    System.out.println("SOY OR / AND");
                 }
                 if (value2 instanceof Integer){
                     value = oper(oper, (Integer) value, (Integer) value2);
@@ -231,14 +235,11 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.out.println("ERROR: no es posible comparar Boolean con "+oper);
                         System.exit(0);
                     }
-
                 }
                 return value;
             }
         }
-
         return value;
-
     }
 
 

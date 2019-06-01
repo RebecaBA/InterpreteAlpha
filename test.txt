@@ -19,7 +19,7 @@ in
                         y :=10;
                         m := true
                     end;
-                while y do
+                while y < 5 and y == 6 do
                      begin
                         print("hi")
                      end
