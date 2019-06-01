@@ -1,5 +1,6 @@
 let
     var y : int;
+    var y : string;
     var l : string;
     var g : string;
     var m : boolean
@@ -19,13 +20,13 @@ in
                         y :=10;
                         m := true
                     end;
-                while y < 5 and y == 6 do
+                while true and m do
                      begin
                         print("hi")
                      end
              end;
          l := "GG";
-         if(true == false) then
+         if(true and true) then
             y:=y+2
          else
             y:= y+1;
