@@ -1,6 +1,5 @@
 let
     var y : int;
-    var y : string;
     var l : string;
     var g : string;
     var m : boolean
@@ -19,8 +18,9 @@ in
                     begin
                         y :=10;
                         m := true
+                        g := "Hi"
                     end;
-                while true and m do
+                while (g == "Hola" and y == 10) do
                      begin
                         print("hi")
                      end

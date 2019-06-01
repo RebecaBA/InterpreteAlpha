@@ -3,15 +3,12 @@ import generated.Parser2BaseVisitor;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.util.ArrayList;
 import java.util.IllegalFormatException;
 
 
 public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     private TablaSimbolos miTabla;
-    boolean vengoWhile = false;
-    boolean vengoIf = false;
 
 
     public MiVisitor() {
@@ -19,7 +16,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     }
 
     @Override
-    public Object visit(ParseTree tree) {
+    public Object visit(ParseTree tree)  {
         return super.visit(tree);
     }
 
@@ -94,7 +91,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
         {
             for (int i = 0; i < (Integer) value; i++)
             {
-
                 visit(ctx.singleCommand());
             }
         }
@@ -159,7 +155,7 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                 System.out.println("TIPO NO INDENTIFICADO");
             }
         }else{
-            printError("NO PUEDE DECLARAR VARIABLES CON EL MISMO NOMBRE EN EL MISMO NIVEL",ctx.ID().getSymbol());
+            printError("NO PUEDE DECLARAR VARIABLES CON EL MISMO NOMBRE EN EL MISMO NIVEL ",ctx.ID().getSymbol());
             System.exit(0);
 
         }
@@ -175,7 +171,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     @Override
     public Object visitExpressionAST(Parser2.ExpressionASTContext ctx) {
         Object value = visit(ctx.primaryExpression(0));
-        Boolean result1 = false;
         if(value instanceof Integer){
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
@@ -190,13 +185,8 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.exit(0);
                     }
                     else if (value2 instanceof Integer){
-                        result1 = true;
-                        System.out.println("TODOO COOOOOOOL");
                         System.exit(0);
                     }
-                }
-                else if (oper.equals("or")||oper.equals("and")){
-                    System.out.println("SOY OR / AND");
                 }
                 else if(oper.equals("and") || oper.equals("or")){
                     if(value2 instanceof Boolean){
@@ -237,7 +227,6 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.exit(0);
                     }
                 }
-
                 if (value2 instanceof String){
                     value = operString(oper, (String) value, (String) value2);
                     return value;
@@ -257,16 +246,15 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.exit(0);
                     }
                 }else if(oper.equals("and") || oper.equals("or")){
-                if(value2 instanceof String){
-                    System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
-                    System.exit(0);
-                }
-                if (value2 instanceof Integer) {
-                    System.out.println("ERROR: no es posible utilizar and/or con tipos boolean y string");
-                    System.exit(0);
-                }
-            }
-                if (value2 instanceof Boolean){
+                    if(value2 instanceof String){
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
+                        System.exit(0);
+                    }
+                    if (value2 instanceof Integer) {
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos boolean y string");
+                        System.exit(0);
+                    }
+                }if (value2 instanceof Boolean){
                     if(oper.equals("==")||oper.equals("and")||oper.equals("or")){
                         value = oper(oper, (Boolean) value,(Boolean)value2);
                         return value;
@@ -337,10 +325,14 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     private Object oper(String op, Object o1, Object o2){
         switch(op) {
-            case "+"   : return (Integer)o1 +(Integer)o2;
-            case "-"   : return (Integer)o1 - (Integer)o2;
-            case "*"   : return (Integer)o1 * (Integer)o2;
-            case "/"   : return (Integer)o1 / (Integer)o2;
+            case "+"   :
+                return (Integer)o1 +(Integer)o2;
+            case "-"   :
+                return (Integer)o1 - (Integer)o2;
+            case "*"   :
+                return (Integer)o1 * (Integer)o2;
+            case "/"   :
+                return (Integer)o1 / (Integer)o2;
             case "=="  :
                 return (Boolean) o1 == (Boolean) o2;
             case "and" :
