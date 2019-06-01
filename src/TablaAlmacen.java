@@ -1,28 +1,23 @@
-import org.antlr.v4.runtime.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-/**
- * Created by oviquez on 19/9/2016.
- */
-public class TablaSimbolos {
+public class TablaAlmacen {
 
-    LinkedList<Object> tabla;
-
+    LinkedList<Object> almacenGlobal;
+    LinkedList<Object> almacenLocal;
     private int nivelActual;
 
-    class Ident{
-        Token tok;
-        int type; // 1 para int 2 para String y 3 para Boolean
+    public class Almacen{
+        String nombre ;
+        Object valor ;
+
         int nivel;
-        Object valor; //se cambia el valor para que reciba string o int
+        public Almacen(String n){
+             nombre = n;
+             valor = null;
+             nivel = nivelActual;
 
-        public Ident(Token t, int tp){
-            tok = t;
-            type = tp;
-            nivel=nivelActual;
-            valor = null;
         }
-
         public void setValue(Object value)
         {
             valor = value;
@@ -30,18 +25,19 @@ public class TablaSimbolos {
 
     }
 
-    public TablaSimbolos() {
-        tabla = new LinkedList<Object>();
-        this.nivelActual=-1;
+    public TablaAlmacen() {
+        almacenGlobal = new LinkedList<Object>();
+        almacenLocal = new LinkedList<Object>();
+        this.nivelActual = -1;
     }
 
-    public void insertar(Token id, int tipo)
+   /* public void insertarGlobal(String nombre)
     {
-        Ident i = new Ident(id,tipo);
-        tabla.add(i);
-    }
+        Almacen i = new Almacen(nombre,valor);
+        almacenGlobal.add(i);
+    }*/
 
-    public Ident buscar(String nombre)
+  /*  public Almacen buscar(String nombre)
     {
         //debe buscarse en otro orden... de atrás para adelante
         Ident temp=null;
@@ -64,7 +60,7 @@ public class TablaSimbolos {
 
         return temp;
     };
-
+*/
 
     public void openScope()
     {
@@ -78,7 +74,7 @@ public class TablaSimbolos {
         nivelActual--;
     }
 
-    public void imprimir() {
+   /* public void imprimir() {
         System.out.println("----- INICIO TABLA ------");
         String tipoVariable ="";
         for (int i = 0; i < tabla.size(); i++) {
@@ -97,5 +93,12 @@ public class TablaSimbolos {
 
         }
         System.out.println("----- FIN TABLA ------");
-    }
+    }*/
+
+
 }
+
+
+
+
+

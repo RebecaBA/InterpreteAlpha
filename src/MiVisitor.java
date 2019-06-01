@@ -79,13 +79,23 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
     }
 /*****************************HABILITAR DIFERENTES COMPARACIONES**************************************/
     @Override
-    public Object visitWhileSCAST(Parser2.WhileSCASTContext ctx) {
+    public Object visitWhileSCAST(Parser2.WhileSCASTContext ctx)
+    {
         Object value = visit(ctx.expression());
-        if (value instanceof Integer) {
-            for (int i = 0; i < (Integer) value; i++){
+        if (value instanceof Integer)
+        {
+            for (int i = 0; i < (Integer) value; i++)
+            {
+
                 visit(ctx.singleCommand());
             }
-        } else{
+        }
+        else if (value instanceof  Boolean)
+        {
+            visit(ctx.singleCommand());
+
+        }
+        else{
             System.out.println("ERROR!!! ... No es posible realizar un while con el tipo de dato asignado");
             System.exit(0);
 
@@ -140,6 +150,10 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             } else {
                 System.out.println("TIPO NO INDENTIFICADO");
             }
+        }else{
+            printError("NO PUEDE DECLARAR VARIABLES CON EL MISMO NOMBRE EN EL MISMO NIVEL",ctx.ID().getSymbol());
+            System.exit(0);
+
         }
 
         return null;
@@ -157,13 +171,23 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
-                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")||oper.equals("==")){
-                    if(value2 instanceof Boolean){
+                if (oper.equals(">") || oper.equals("<") || oper.equals(">=") || oper.equals("<=") || oper.equals("==")) {
+                    if (value2 instanceof Boolean) {
                         System.out.println("ERROR: no es posible comparar Integers con Booleans");
                         System.exit(0);
                     }
-                    if(value2 instanceof String){
+                    if (value2 instanceof String) {
                         System.out.println("ERROR: no es posible comparar Integers con Strings");
+                        System.exit(0);
+                    }
+                }
+                else if(oper.equals("and") || oper.equals("or")){
+                    if(value2 instanceof Boolean){
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y boolean");
+                        System.exit(0);
+                    }
+                    if (value2 instanceof String) {
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
                         System.exit(0);
                     }
                 }
@@ -187,6 +211,15 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.out.println("ERROR: no es posible comparar Strings con Integers");
                         System.exit(0);
                     }
+                }else if(oper.equals("and") || oper.equals("or")){
+                    if(value2 instanceof Boolean){
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos }String y boolean");
+                        System.exit(0);
+                    }
+                    if (value2 instanceof Integer) {
+                        System.out.println("ERROR: no es posible utilizar and/or con tipos string y int");
+                        System.exit(0);
+                    }
                 }
 
                 if (value2 instanceof String){
@@ -208,9 +241,18 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
                         System.out.println("ERROR: no es posible comparar Boolean con Integers");
                         System.exit(0);
                     }
+                }else if(oper.equals("and") || oper.equals("or")){
+                if(value2 instanceof String){
+                    System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
+                    System.exit(0);
                 }
+                if (value2 instanceof Integer) {
+                    System.out.println("ERROR: no es posible utilizar and/or con tipos boolean y string");
+                    System.exit(0);
+                }
+            }
                 if (value2 instanceof Boolean){
-                    if(oper.equals("==")){
+                    if(oper.equals("==")||oper.equals("and")||oper.equals("or")){
                         value = oper(oper, (Boolean) value,(Boolean)value2);
                         return value;
                     }else{
@@ -283,11 +325,13 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
 
     private Object oper(String op, Object o1, Object o2){
         switch(op) {
-            case "+": return (Integer)o1 +(Integer)o2;
-            case "-": return (Integer)o1 - (Integer)o2;
-            case "*": return (Integer)o1 * (Integer)o2;
-            case "/": return (Integer)o1 / (Integer)o2;
-            case "==": if((Boolean) o1==(Boolean) o2){return true;}else return false;
+            case "+"   : return (Integer)o1 +(Integer)o2;
+            case "-"   : return (Integer)o1 - (Integer)o2;
+            case "*"   : return (Integer)o1 * (Integer)o2;
+            case "/"   : return (Integer)o1 / (Integer)o2;
+            case "=="  : if((Boolean) o1 == (Boolean) o2){return true;}else return false;
+            case "and" : if((Boolean) o1 && (Boolean) o2){return true;}else return false;
+            case "or:" : if((Boolean) o1 && (Boolean) o2){return true;}else return false;
         }
         return 0;
     }
