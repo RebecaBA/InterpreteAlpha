@@ -11,34 +11,16 @@ in
             var w : string
         in
             begin
-
-                let
-                    var y : int;
-                    var w : string
-                in
-                    begin
-                        y :=10;
-                        m := false;
-                        n := true
-                    end;
-                while (g == "Hola" and y == 10) do
-                     begin
-                        print("hi")
-                     end
-             end;
-         l := "GG";
-         if(m or n) then
-           y:= y*5
-         else
-            print("ENTRA AL ELSE");
-            y:= y+1;
-            g :="Robert";
-            y:=y+3;
-         print(y);
-         print(g);
-         print(m)
-
-
+                y :=10;
+                m := false;
+                n := true;
+                g := "Hola"
+            end;
+            while y <= 20 do
+                 begin
+                    y := y + 2;
+                    print(y)
+                 end;
     end
 
 

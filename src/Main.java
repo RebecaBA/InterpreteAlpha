@@ -15,7 +15,7 @@ public class Main {
         CommonTokenStream tokens = null;
         MyErrorListener errorListener = null;
         try {
-            input = CharStreams.fromFileName("test.txt");
+            input = CharStreams.fromFileName("test2.txt");
             inst = new Scanner(input);
             tokens = new CommonTokenStream(inst);
             parser = new Parser2(tokens);

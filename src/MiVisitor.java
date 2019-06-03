@@ -177,32 +177,28 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
-                if (oper.equals(">") || oper.equals("<") || oper.equals(">=") || oper.equals("<=") || oper.equals("==")) {
-                    if (value2 instanceof Boolean) {
-                        System.out.println("ERROR: no es posible comparar Integers con Booleans");
-                        System.exit(0);
-                    }
-                    if (value2 instanceof String) {
-                        System.out.println("ERROR: no es posible comparar Integers con Strings");
-                        System.exit(0);
-                    }
-                    else if (value2 instanceof Integer){
-                        System.exit(0);
-                    }
-                }
-                else if(oper.equals("and") || oper.equals("or")){
-                    if(value2 instanceof Boolean){
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y boolean");
-                        System.exit(0);
-                    }
-                    if (value2 instanceof String) {
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
-                        System.exit(0);
+                if (value instanceof  Integer){
+                    switch (oper) {
+                        case ">":
+                        case "<":
+                        case ">=":
+                        case "<=":
+                        case "==":
+                            return true;
+                        case "and":
+                        case "or":
+                            return true;
+                        case "+":
+                        case "-":
+                        case "*":
+                        case "/":
+                            value = oper(oper, (Integer) value, (Integer) value2);
+                            return value;
                     }
                 }
-                if (value2 instanceof Integer){
-                    value = oper(oper, (Integer) value, (Integer) value2);
-                    return value;
+                else{
+                    System.out.println("ERROR: difieren los dipos de datos en la expresion de comparación");
+                    System.exit(0);
                 }
             }
 
@@ -211,27 +207,18 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
-                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")) {
-                    if (value2 instanceof Boolean) {
-                        System.out.println("ERROR: no es posible comparar Strings con Booleans");
-                        System.exit(0);
-                    } else if (value2 instanceof Integer) {
-                        System.out.println("ERROR: no es posible comparar Strings con Integers");
-                        System.exit(0);
+                if (value2 instanceof String){
+                    if (oper.equals("==")){
+                        return true;
                     }
-                }else if(oper.equals("and") || oper.equals("or")){
-                    if(value2 instanceof Boolean){
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos }String y boolean");
-                        System.exit(0);
-                    }
-                    if (value2 instanceof Integer) {
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos string y int");
-                        System.exit(0);
+                    else if (oper.equals("+")){
+                        value = operString(oper, (String) value, (String) value2);
+                        return value;
                     }
                 }
-                if (value2 instanceof String){
-                    value = operString(oper, (String) value, (String) value2);
-                    return value;
+                else {
+                    System.out.println("ERROR: difieren los dipos de datos en la expresion de comparación");
+                    System.exit(0);
                 }
             }
 
@@ -239,33 +226,16 @@ public class MiVisitor extends Parser2BaseVisitor<Object>{
             for (int i = 1; i < ctx.primaryExpression().size(); i++) {
                 String oper = (String) visit(ctx.operator(i - 1));
                 Object value2 = visit(ctx.primaryExpression(i));
-                if(oper.equals(">")||oper.equals("<")||oper.equals(">=")||oper.equals("<=")) {
-                    if (value2 instanceof String) {
-                        System.out.println("ERROR: no es posible comparar Boolean con Strings");
-                        System.exit(0);
-                    } else if (value2 instanceof Integer) {
-                        System.out.println("ERROR: no es posible comparar Boolean con Integers");
-                        System.exit(0);
-                    }
-                }else if(oper.equals("and") || oper.equals("or")){
-                    if(value2 instanceof String){
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos int y string");
-                        System.exit(0);
-                    }
-                    if (value2 instanceof Integer) {
-                        System.out.println("ERROR: no es posible utilizar and/or con tipos boolean y string");
-                        System.exit(0);
-                    }
-                }if (value2 instanceof Boolean){
+                if (value2 instanceof Boolean){
                     if(oper.equals("==")||oper.equals("and")||oper.equals("or")){
                         value = oper(oper, (Boolean) value,(Boolean)value2);
                         return value;
-                    }else{
-                        System.out.println("ERROR: no es posible comparar Boolean con "+oper);
-                        System.exit(0);
                     }
                 }
-                return value;
+                else{
+                    System.out.println("ERROR: difieren los dipos de datos en la expresión de comparación");
+                    System.exit(0);
+                }
             }
         }
         return value;
